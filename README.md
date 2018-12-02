@@ -5,3 +5,4 @@ jCricket is Pinokio's Soul & Brain, the software running behind Fineas's 1st ful
 
 **Made possible by:**
 - J
+- George Stinis
