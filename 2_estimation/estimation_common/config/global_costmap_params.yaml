@@ -1,0 +1,17 @@
+global_costmap:
+  global_frame: map
+  robot_base_frame: base_footprint
+  #define the transformation between the map and the robot
+
+  update_frequency: 10.0
+  #configure the frequency of updates for the costmap
+
+  static_map: true
+  #whether a map or the map server is used to initialize the costmap
+
+  publish_frequency: 10.0
+  #configure the frequency of refreshing in RViz for the costmap
+  
+#plugins:
+#- {name: obstacles, type: "costmap_2d::ObstacleLayer"}
+#- {name: inflation, type: "costmap_2d::InflationLayer"}
