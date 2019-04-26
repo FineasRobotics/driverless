@@ -16,6 +16,3 @@ Press 2D Nav Goal , hold it in the spot you want to send the goal, and turn it t
 
 ### Control the robot with the keyboard
 Open another terminal and run: `rosrun teleop_twist_keyboard teleop_twist_keyboard.py`
-
-**Made possible by:**
-- Jim Skretas.
