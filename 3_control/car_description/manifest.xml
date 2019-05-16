@@ -1,0 +1,17 @@
+<package>
+  <description brief="car_description">
+
+     car_description
+
+  </description>
+  <author>chris</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/car_description</url>
+  <depend package="rospy"/>
+  <depend package="std_msgs"/>
+  <depend package="geometry_msgs"/>
+
+</package>
+
+
