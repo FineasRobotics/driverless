@@ -1,7 +1,7 @@
 <?xml version='1.0'?>
 <sdf version='1.6'>
   <model name='small_track'>
-    <link name='link_0'>
+    <link name='link0000'>
       <pose frame=''>-17.0129 9.72719 0.079001 0 -0 0</pose>
       <collision name="collision">
         <geometry>
@@ -18,7 +18,7 @@
         </geometry>
       </visual>
     </link>
-    <link name='link_0_clone'>
+    <link name='link0001'>
       <pose frame=''>-12.7541 12.8712 0.079001 0 -0 0</pose>
       <collision name="collision">
         <geometry>
@@ -35,7 +35,7 @@
         </geometry>
       </visual>
     </link>
-    <link name='link_0_clone_0_clone'>
+    <link name='link0002'>
       <pose frame=''>-12.2686 6.61784 0.070966 -0.001555 0.00019 -5.2e-05</pose>
       <collision name="collision">
         <geometry>
@@ -52,7 +52,7 @@
         </geometry>
       </visual>
     </link>
-    <link name='link_0_clone_0_clone_clone'>
+    <link name='link0003'>
       <pose frame=''>-9.65737 7.2378 0.083534 0.001019 -0.000437 -0.000128</pose>
       <collision name="collision">
         <geometry>
@@ -69,7 +69,7 @@
         </geometry>
       </visual>
     </link>
-    <link name='link_0_clone_1'>
+    <link name='link0004'>
       <pose frame=''>-8.31569 13.0924 0.079001 0 -0 0</pose>
       <collision name="collision">
         <geometry>
@@ -86,7 +86,7 @@
         </geometry>
       </visual>
     </link>
-    <link name='link_0_clone_10'>
+    <link name='link0005'>
       <pose frame=''>7.33516 9.03961 0.083556 0 -0 0</pose>
       <collision name="collision">
         <geometry>
@@ -103,7 +103,7 @@
         </geometry>
       </visual>
     </link>
-    <link name='link_0_clone_11'>
+    <link name='link0006'>
       <pose frame=''>9.62956 15.8379 0.084236 0 -0 0</pose>
       <collision name="collision">
         <geometry>
@@ -120,7 +120,7 @@
         </geometry>
       </visual>
     </link>
-    <link name='link_0_clone_12'>
+    <link name='link0007'>
       <pose frame=''>10.548 10.5892 0.085274 0 -0 0</pose>
       <collision name="collision">
         <geometry>
@@ -137,7 +137,7 @@
         </geometry>
       </visual>
     </link>
-    <link name='link_0_clone_13'>
+    <link name='link0008'>
       <pose frame=''>13.1479 11.1316 0.08476 0 -0 0</pose>
       <collision name="collision">
         <geometry>
@@ -154,7 +154,7 @@
         </geometry>
       </visual>
     </link>
-    <link name='link_0_clone_14'>
+    <link name='link0009'>
       <pose frame=''>12.492 17.0404 0.083705 0 -0 0</pose>
       <collision name="collision">
         <geometry>
@@ -171,7 +171,7 @@
         </geometry>
       </visual>
     </link>
-    <link name='link_0_clone_15'>
+    <link name='link0010'>
       <pose frame=''>15.1389 16.5025 0.082223 0 -0 0</pose>
       <collision name="collision">
         <geometry>
@@ -188,7 +188,7 @@
         </geometry>
       </visual>
     </link>
-    <link name='link_0_clone_16'>
+    <link name='link0011'>
       <pose frame=''>15.2725 10.0791 0.08035 0 -0 0</pose>
       <collision name="collision">
         <geometry>
@@ -205,7 +205,7 @@
         </geometry>
       </visual>
     </link>
-    <link name='link_0_clone_17'>
+    <link name='link0012'>
       <pose frame=''>19.5034 13.6361 0.079669 0 -0 0</pose>
       <collision name="collision">
         <geometry>
@@ -222,7 +222,7 @@
         </geometry>
       </visual>
     </link>
-    <link name='link_0_clone_17_clone'>
+    <link name='link0013'>
       <pose frame=''>20.8922 11.7012 0.056623 -0.001555 0.00019 -5.2e-05</pose>
       <collision name="collision">
         <geometry>
@@ -239,7 +239,7 @@
         </geometry>
       </visual>
     </link>
-    <link name='link_0_clone_17_clone_0'>
+    <link name='link0014'>
       <pose frame=''>17.5221 15.3812 0.082077 -0.001555 0.00019 -5.2e-05</pose>
       <collision name="collision">
         <geometry>
@@ -256,7 +256,7 @@
         </geometry>
       </visual>
     </link>
-    <link name='link_0_clone_18'>
+    <link name='link0015'>
       <pose frame=''>16.8037 8.23821 0.079433 0 -0 0</pose>
       <collision name="collision">
         <geometry>
@@ -273,7 +273,7 @@
         </geometry>
       </visual>
     </link>
-    <link name='link_0_clone_19'>
+    <link name='link0016'>
       <pose frame=''>21.4761 8.79574 0.079001 0 -0 0</pose>
       <collision name="collision">
         <geometry>
@@ -290,7 +290,7 @@
         </geometry>
       </visual>
     </link>
-    <link name='link_0_clone_2'>
+    <link name='link0017'>
       <pose frame=''>-6.90273 7.20128 0.080073 0 -0 0</pose>
       <collision name="collision">
         <geometry>
@@ -307,7 +307,7 @@
         </geometry>
       </visual>
     </link>
-    <link name='link_0_clone_20'>
+    <link name='link0018'>
       <pose frame=''>20.9992 5.27662 0.079001 0 -0 0</pose>
       <collision name="collision">
         <geometry>
@@ -324,7 +324,7 @@
         </geometry>
       </visual>
     </link>
-    <link name='link_0_clone_21'>
+    <link name='link0019'>
       <pose frame=''>16.7063 6.10772 0.079001 0 -0 0</pose>
       <collision name="collision">
         <geometry>
@@ -341,7 +341,7 @@
         </geometry>
       </visual>
     </link>
-    <link name='link_0_clone_22'>
+    <link name='link0020'>
       <pose frame=''>19.9925 2.24053 0.079001 0 -0 0</pose>
       <collision name="collision">
         <geometry>
@@ -358,7 +358,7 @@
         </geometry>
       </visual>
     </link>
-    <link name='link_0_clone_23'>
+    <link name='link0021'>
       <pose frame=''>15.876 3.47906 0.079001 0 -0 0</pose>
       <collision name="collision">
         <geometry>
@@ -375,7 +375,7 @@
         </geometry>
       </visual>
     </link>
-    <link name='link_0_clone_24'>
+    <link name='link0022'>
       <pose frame=''>15.106 1.5027 0.079001 0 -0 0</pose>
       <collision name="collision">
         <geometry>
@@ -392,7 +392,7 @@
         </geometry>
       </visual>
     </link>
-    <link name='link_0_clone_25'>
+    <link name='link0023'>
       <pose frame=''>19.0983 -0.671871 0.079001 0 -0 0</pose>
       <collision name="collision">
         <geometry>
@@ -409,7 +409,7 @@
         </geometry>
       </visual>
     </link>
-    <link name='link_0_clone_26'>
+    <link name='link0024'>
       <pose frame=''>13.6765 -0.472612 0.079001 0 -0 0</pose>
       <collision name="collision">
         <geometry>
@@ -426,7 +426,7 @@
         </geometry>
       </visual>
     </link>
-    <link name='link_0_clone_27'>
+    <link name='link0025'>
       <pose frame=''>17.1824 -3.23994 0.079001 0 -0 0</pose>
       <collision name="collision">
         <geometry>
@@ -443,7 +443,7 @@
         </geometry>
       </visual>
     </link>
-    <link name='link_0_clone_28'>
+    <link name='link0026'>
       <pose frame=''>9.41953 -2.84739 0.079001 0 -0 0</pose>
       <collision name="collision">
         <geometry>
@@ -460,7 +460,7 @@
         </geometry>
       </visual>
     </link>
-    <link name='link_0_clone_29'>
+    <link name='link0027'>
       <pose frame=''>11.114 -6.74408 0.079001 0 -0 0</pose>
       <collision name="collision">
         <geometry>
@@ -477,7 +477,7 @@
         </geometry>
       </visual>
     </link>
-    <link name='link_0_clone_3'>
+    <link name='link0028'>
       <pose frame=''>-4.06552 13.3637 0.079001 0 -0 0</pose>
       <collision name="collision">
         <geometry>
@@ -494,7 +494,7 @@
         </geometry>
       </visual>
     </link>
-    <link name='link_0_clone_30'>
+    <link name='link0029'>
       <pose frame=''>12.0732 -1.43122 0.079001 0 -0 0</pose>
       <collision name="collision">
         <geometry>
@@ -511,7 +511,7 @@
         </geometry>
       </visual>
     </link>
-    <link name='link_0_clone_31'>
+    <link name='link0030'>
       <pose frame=''>14.2831 -5.26437 0.079001 0 -0 0</pose>
       <collision name="collision">
         <geometry>
@@ -528,7 +528,7 @@
         </geometry>
       </visual>
     </link>
-    <link name='link_0_clone_32'>
+    <link name='link0031'>
       <pose frame=''>7.26282 -3.9408 0.079001 0 -0 0</pose>
       <collision name="collision">
         <geometry>
@@ -545,7 +545,7 @@
         </geometry>
       </visual>
     </link>
-    <link name='link_0_clone_33'>
+    <link name='link0032'>
       <pose frame=''>8.25363 -8.53889 0.079001 0 -0 0</pose>
       <collision name="collision">
         <geometry>
@@ -562,7 +562,7 @@
         </geometry>
       </visual>
     </link>
-    <link name='link_0_clone_34'>
+    <link name='link0033'>
       <pose frame=''>4.65159 -5.15509 0.079001 0 -0 0</pose>
       <collision name="collision">
         <geometry>
@@ -579,7 +579,7 @@
         </geometry>
       </visual>
     </link>
-    <link name='link_0_clone_35'>
+    <link name='link0034'>
       <pose frame=''>5.06185 -10.1551 0.079001 0 -0 0</pose>
       <collision name="collision">
         <geometry>
@@ -596,7 +596,7 @@
         </geometry>
       </visual>
     </link>
-    <link name='link_0_clone_36'>
+    <link name='link0035'>
       <pose frame=''>1.78774 -6.66723 0.079001 0 -0 0</pose>
       <collision name="collision">
         <geometry>
@@ -613,7 +613,7 @@
         </geometry>
       </visual>
     </link>
-    <link name='link_0_clone_37'>
+    <link name='link0036'>
       <pose frame=''>1.42086 -11.9634 0.079001 0 -0 0</pose>
       <collision name="collision">
         <geometry>
@@ -630,7 +630,7 @@
         </geometry>
       </visual>
     </link>
-    <link name='link_0_clone_38'>
+    <link name='link0037'>
       <pose frame=''>-1.97969 -8.56329 0.079001 0 -0 0</pose>
       <collision name="collision">
         <geometry>
@@ -647,7 +647,7 @@
         </geometry>
       </visual>
     </link>
-    <link name='link_0_clone_39'>
+    <link name='link0038'>
       <pose frame=''>-2.4975 -14.0305 0.079001 0 -0 0</pose>
       <collision name="collision">
         <geometry>
@@ -664,7 +664,7 @@
         </geometry>
       </visual>
     </link>
-    <link name='link_0_clone_4'>
+    <link name='link0039'>
       <pose frame=''>-3.80615 7.33616 0.079001 0 -0 0</pose>
       <collision name="collision">
         <geometry>
@@ -681,7 +681,7 @@
         </geometry>
       </visual>
     </link>
-    <link name='link_0_clone_40'>
+    <link name='link0040'>
       <pose frame=''>-5.18123 -10.5555 0.079001 0 -0 0</pose>
       <collision name="collision">
         <geometry>
@@ -698,7 +698,7 @@
         </geometry>
       </visual>
     </link>
-    <link name='link_0_clone_41'>
+    <link name='link0041'>
       <pose frame=''>-5.74864 -16.1217 0.079001 0 -0 0</pose>
       <collision name="collision">
         <geometry>
@@ -715,7 +715,7 @@
         </geometry>
       </visual>
     </link>
-    <link name='link_0_clone_42'>
+    <link name='link0042'>
       <pose frame=''>-8.34841 -12.1551 0.079001 0 -0 0</pose>
       <collision name="collision">
         <geometry>
@@ -732,7 +732,7 @@
         </geometry>
       </visual>
     </link>
-    <link name='link_0_clone_43'>
+    <link name='link0043'>
       <pose frame=''>-9.34841 -17.1551 0.079001 0 -0 0</pose>
       <collision name="collision">
         <geometry>
@@ -749,7 +749,7 @@
         </geometry>
       </visual>
     </link>
-    <link name='link_0_clone_44'>
+    <link name='link0044'>
       <pose frame=''>-9.78487 -11.8592 0.079001 0 -0 0</pose>
       <collision name="collision">
         <geometry>
@@ -766,7 +766,7 @@
         </geometry>
       </visual>
     </link>
-    <link name='link_0_clone_45'>
+    <link name='link0045'>
       <pose frame=''>-12.2114 -16.6459 0.079001 0 -0 0</pose>
       <collision name="collision">
         <geometry>
@@ -783,7 +783,7 @@
         </geometry>
       </visual>
     </link>
-    <link name='link_0_clone_46'>
+    <link name='link0046'>
       <pose frame=''>-11.3484 -11.1551 0.079001 0 -0 0</pose>
       <collision name="collision">
         <geometry>
@@ -800,7 +800,7 @@
         </geometry>
       </visual>
     </link>
-    <link name='link_0_clone_47'>
+    <link name='link0047'>
       <pose frame=''>-14.4625 -14.9249 0.079001 0 -0 0</pose>
       <collision name="collision">
         <geometry>
@@ -817,7 +817,7 @@
         </geometry>
       </visual>
     </link>
-    <link name='link_0_clone_48'>
+    <link name='link0048'>
       <pose frame=''>-16.2427 -13.276 0.079001 0 -0 0</pose>
       <collision name="collision">
         <geometry>
@@ -834,7 +834,7 @@
         </geometry>
       </visual>
     </link>
-    <link name='link_0_clone_49'>
+    <link name='link0049'>
       <pose frame=''>-13.2946 -8.64709 0.079001 0 -0 0</pose>
       <collision name="collision">
         <geometry>
@@ -851,7 +851,7 @@
         </geometry>
       </visual>
     </link>
-    <link name='link_0_clone_5'>
+    <link name='link0050'>
       <pose frame=''>-0.131239 13.3125 0.079001 0 -0 0</pose>
       <collision name="collision">
         <geometry>
@@ -868,7 +868,7 @@
         </geometry>
       </visual>
     </link>
-    <link name='link_0_clone_50'>
+    <link name='link0051'>
       <pose frame=''>-17.8615 -11.5349 0.079001 0 -0 0</pose>
       <collision name="collision">
         <geometry>
@@ -885,7 +885,7 @@
         </geometry>
       </visual>
     </link>
-    <link name='link_0_clone_51'>
+    <link name='link0052'>
       <pose frame=''>-14.2998 -6.05581 0.079001 0 -0 0</pose>
       <collision name="collision">
         <geometry>
@@ -902,7 +902,7 @@
         </geometry>
       </visual>
     </link>
-    <link name='link_0_clone_52'>
+    <link name='link0053'>
       <pose frame=''>-19.1945 -8.52656 0.079001 0 -0 0</pose>
       <collision name="collision">
         <geometry>
@@ -919,7 +919,7 @@
         </geometry>
       </visual>
     </link>
-    <link name='link_0_clone_53'>
+    <link name='link0054'>
       <pose frame=''>-18.9382 -5.15509 -4.97705 0 -0 0</pose>
       <collision name="collision">
         <geometry>
@@ -936,7 +936,7 @@
         </geometry>
       </visual>
     </link>
-    <link name='link_0_clone_54'>
+    <link name='link0055'>
       <pose frame=''>-14.0528 -3.05427 0.079001 0 -0 0</pose>
       <collision name="collision">
         <geometry>
@@ -953,7 +953,7 @@
         </geometry>
       </visual>
     </link>
-    <link name='link_0_clone_55'>
+    <link name='link0056'>
       <pose frame=''>-18.8625 -4.02997 0.079001 0 -0 0</pose>
       <collision name="collision">
         <geometry>
@@ -970,7 +970,7 @@
         </geometry>
       </visual>
     </link>
-    <link name='link_0_clone_56'>
+    <link name='link0057'>
       <pose frame=''>-18.6872 -0.45783 0.079001 0 -0 0</pose>
       <collision name="collision">
         <geometry>
@@ -987,7 +987,7 @@
         </geometry>
       </visual>
     </link>
-    <link name='link_0_clone_57'>
+    <link name='link0058'>
       <pose frame=''>-13.6807 -0.101053 0.079001 0 -0 0</pose>
       <collision name="collision">
         <geometry>
@@ -1004,7 +1004,7 @@
         </geometry>
       </visual>
     </link>
-    <link name='link_0_clone_58'>
+    <link name='link0059'>
       <pose frame=''>-18.1384 2.83132 0.079001 0 -0 0</pose>
       <collision name="collision">
         <geometry>
@@ -1021,7 +1021,7 @@
         </geometry>
       </visual>
     </link>
-    <link name='link_0_clone_59'>
+    <link name='link0060'>
       <pose frame=''>-13.3484 2.84491 0.079001 0 -0 0</pose>
       <collision name="collision">
         <geometry>
@@ -1038,7 +1038,7 @@
         </geometry>
       </visual>
     </link>
-    <link name='link_0_clone_6'>
+    <link name='link0061'>
       <pose frame=''>-0.595997 7.27843 0.079001 0 -0 0</pose>
       <collision name="collision">
         <geometry>
@@ -1055,7 +1055,7 @@
         </geometry>
       </visual>
     </link>
-    <link name='link_0_clone_60'>
+    <link name='link0062'>
       <pose frame=''>-17.8432 6.27091 0.079001 0 -0 0</pose>
       <collision name="collision">
         <geometry>
@@ -1072,7 +1072,7 @@
         </geometry>
       </visual>
     </link>
-    <link name='link_0_clone_61'>
+    <link name='link0063'>
       <pose frame=''>-13.3484 4.84491 0.079001 0 -0 0</pose>
       <collision name="collision">
         <geometry>
@@ -1089,7 +1089,7 @@
         </geometry>
       </visual>
     </link>
-    <link name='link_0_clone_62'>
+    <link name='link0064'>
       <pose frame=''>-15.5443 12.0063 0.063291 -0.001555 0.00019 -5.2e-05</pose>
       <collision name="collision">
         <geometry>
@@ -1106,7 +1106,7 @@
         </geometry>
       </visual>
     </link>
-    <link name='link_0_clone_7'>
+    <link name='link0065'>
       <pose frame=''>3.50416 13.7245 0.080395 0 -0 0</pose>
       <collision name="collision">
         <geometry>
@@ -1123,7 +1123,7 @@
         </geometry>
       </visual>
     </link>
-    <link name='link_0_clone_8'>
+    <link name='link0066'>
       <pose frame=''>2.90884 7.57594 0.07997 0 -0 0</pose>
       <collision name="collision">
         <geometry>
@@ -1140,7 +1140,7 @@
         </geometry>
       </visual>
     </link>
-    <link name='link_0_clone_9'>
+    <link name='link0067'>
       <pose frame=''>7.13676 14.727 0.083062 0 -0 0</pose>
       <collision name="collision">
         <geometry>

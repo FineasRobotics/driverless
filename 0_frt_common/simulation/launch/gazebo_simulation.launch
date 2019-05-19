@@ -4,7 +4,7 @@
     <env name="GAZEBO_MODEL_PATH" value="$(find simulation)"/>
     <env name="GAZEBO_RESOURCE_PATH" value="$(find simulation)"/>
     <!-- replace the name(e.g. skidpad) with takis/skidpad/small_track/acceleration-->
-    <arg name="world_name" default="worlds/takis.world" />
+    <arg name="world_name" default="worlds/small_track.world" />
     <arg name="model" default="$(find robot)/urdf/robot.xacro" />
 
 		<!-- Gazebo -->
@@ -12,7 +12,7 @@
       <arg name="world_name" value="$(arg world_name)"/>
       <arg name="paused" value="false"/>
       <arg name="use_sim_time" value="true"/>
-      <arg name="gui" value="false"/><!-- set to true to open gazebo-->
+      <arg name="gui" value="true"/><!-- set to true to open gazebo-->
       <arg name="headless" value="false"/>
       <arg name="recording" value="false"/>
       <arg name="debug" value="false"/>
