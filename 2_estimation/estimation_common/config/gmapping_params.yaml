@@ -1,8 +1,0 @@
-map_update_interval: 2.0
-#How long (in seconds) between updates to the map
-
-minimumScore: 100.0
-#Minimum score for considering the outcome of the scan matching good
-
-#particles: 40
-#Number of particles in the filter
