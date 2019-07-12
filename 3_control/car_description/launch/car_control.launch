@@ -1,5 +1,6 @@
+<?xml version="1.0"?>
 <launch>
-  	<!-- start up wg world--> 
+  <!-- start up wg world--> 
 	<include file="$(find gazebo_ros)/launch/empty_world.launch">
 	</include>
 
