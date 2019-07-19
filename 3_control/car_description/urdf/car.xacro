@@ -78,7 +78,7 @@
 	    		</inertial> 
 	 
 	 	</link>
-	<link name ="chassis">
+	<link name ="chassis"> <!--The mesh of the car -->
 		<visual>
 				<geometry>
 	      				<mesh filename="package://car_description/meshes/whole_car.stl" scale ="0.001 0.001 0.001"/>
@@ -88,7 +88,7 @@
 			<collision>
 				<origin rpy="0 0 0" xyz="0 0 ${radius_wheel}"/>
 				<geometry>
-	       				<box size="${base_x_size} ${base_y_size} ${base_z_size}"/>
+	       				<box size="0.001 0.001 0.001"/>
 				</geometry>
 			</collision>
 			<inertial>
@@ -344,6 +344,29 @@
       <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
     </joint>
     </transmission>
+ <!-- transmission for non controllable joints-->
+
+
+   <transmission name="Front_left_wheel_controller">
+    <type>transmission_interface/SimpleTransmission</type>
+    <actuator name="motor6">
+      <mechanicalReduction>0</mechanicalReduction>
+    </actuator>
+    <joint name="Front_left_wheel_joint">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    </transmission>
+
+   <transmission name="Front_right_wheel_controller">
+    <type>transmission_interface/SimpleTransmission</type>
+    <actuator name="motor7">
+      <mechanicalReduction>0</mechanicalReduction>
+    </actuator>
+    <joint name="Front_right_wheel_joint">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    </transmission>
+
 <!--SENSORS -->
 <!-- Camera joint -->
   <joint name="camera_joint" type="fixed">
