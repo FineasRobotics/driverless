@@ -45,7 +45,7 @@
 			<origin rpy="0 0 0" xyz="0 0 0"/>
    	</visual>
  	</link>
- 	<xacro:include filename="$(find robot1_description)/urdf/robot.gazebo" />
+ 	<xacro:include filename="$(find robot)/urdf/robot.gazebo" />
  
 	<gazebo reference="base_footprint">
 		<material>Gazebo/Green</material>
