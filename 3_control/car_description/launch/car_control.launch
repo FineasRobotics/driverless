@@ -1,8 +1,7 @@
-<?xml version="1.0"?>
 <launch>
-  <!-- start up wg world--> 
+  	<!-- start up wg world
 	<include file="$(find gazebo_ros)/launch/empty_world.launch">
-	</include>
+	</include>-->
 
   	<arg name="model" default="$(find car_description)/urdf/car.xacro"/>
   	<param name="robot_description" command="$(find xacro)/xacro.py $(arg model)" />
@@ -21,7 +20,8 @@ joint_state_controller
 BackWheel_left_velocity_controller 
 BackWheel_right_velocity_controller
 Turner_right_position_controller 
-Turner_left_position_controller"/>
+Turner_left_position_controller
+ Front_left_wheel_controller Front_right_wheel_controller"/>
 
   <!-- convert joint states to TF transforms for rviz, etc -->
 
@@ -30,5 +30,8 @@ Turner_left_position_controller"/>
     <remap from="/joint_states" to="/car/joint_states" />
   </node>
 
-
+  <!-- load the script controller-->
+	<node pkg="car_description" name="controller" type="move.py"></node>
 </launch>
+
+
