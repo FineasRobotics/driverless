@@ -26,3 +26,15 @@ car:
     pid: {p: 100.0, i: 0.01, d: 10.0}
 
 
+
+  Front_left_wheel_controller:
+    type: effort_controllers/JointEffortController
+    joint: Front_left_wheel_joint
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+
+  Front_right_wheel_controller:
+    type: effort_controllers/JointEffortController
+    joint: Front_right_wheel_joint
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+
+
