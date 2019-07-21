@@ -1,7 +1,7 @@
 
 jCricket is Pinokio's Soul & Brain, the software running behind Fineas's 1st fully autonomous race car.
 
-### Setup(Ubuntu 16.04)
+### Setup( Ubuntu 16.04 )
 1. Install packages `sudo apt-get install ros-kinetic-gazebo-ros-pkgs ros-kinetic-gazebo-ros-control ros-kinetic-navigation ros-kinetic-sbpl ros-kinetic-pose-follower ros-kinetic-teleop-twist-keyboard`
 2. Create a new catkin workspace if you don't have one already.
 3. Clone this repository inside your workspace/src folder.
