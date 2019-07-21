@@ -31,4 +31,5 @@
 
   <!-- load the script controller-->
 	<node pkg="car_description" name="controller" type="move.py"></node>
+	 <node pkg="car_description" name="fixed_tf_broadcaster" type="fixed_tf_broadcaster.py"></node>
 </launch>
