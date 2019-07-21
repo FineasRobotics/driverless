@@ -32,5 +32,3 @@
   <!-- load the script controller-->
 	<node pkg="car_description" name="controller" type="move.py"></node>
 </launch>
-
-
