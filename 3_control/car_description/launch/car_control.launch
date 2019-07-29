@@ -1,9 +1,10 @@
 <launch>
-  <include file="$(find gazebo_ros)/launch/empty_world.launch">
-  </include>
+  	<!-- start up wg world
+	<include file="$(find gazebo_ros)/launch/empty_world.launch">
+	</include>-->
 
-  <arg name="model" default="$(find car_description)/urdf/car.xacro"/>
-  <param name="robot_description" command="$(find xacro)/xacro.py $(arg model)" />
+  	<arg name="model" default="$(find car_description)/urdf/car.xacro"/>
+  	<param name="robot_description" command="$(find xacro)/xacro.py $(arg model)" />
 	<node name="spawn_robot" pkg="gazebo_ros" type="spawn_model" args="-urdf -param robot_description -z 0.1 -model car" respawn="false" output="screen" />
 
 
@@ -13,14 +14,14 @@
   <rosparam file="$(find car_description)/config/car_control.yaml" command="load"/>
 
   <!-- load the controllers -->
-  <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
+<node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
     output="screen" ns="/car" args=" 
-    joint_state_controller 
-    BackWheel_left_velocity_controller 
-    BackWheel_right_velocity_controller
-    Turner_right_position_controller 
-    Turner_left_position_controller
-    Front_left_wheel_controller Front_right_wheel_controller"/>
+joint_state_controller 
+BackWheel_left_velocity_controller 
+BackWheel_right_velocity_controller
+Turner_right_position_controller 
+Turner_left_position_controller
+ Front_left_wheel_controller Front_right_wheel_controller "/>
 
   <!-- convert joint states to TF transforms for rviz, etc -->
 
@@ -30,6 +31,11 @@
   </node>
 
   <!-- load the script controller-->
-	<node pkg="car_description" name="controller" type="move.py"></node>
-	 <node pkg="car_description" name="fixed_tf_broadcaster" type="fixed_tf_broadcaster.py"></node>
+	<node pkg="car_description" name="move" type="move.py"></node>
+	<!-- <node pkg="car_description" name="fixed_tf_broadcaster" type="fixed_tf_broadcaster.py"></node>-->
+	<node pkg="car_description" name="dynamic_tf_broadcaster" type="dynamic.py"></node>
+  <!--load the car parameters-->
+	<include file="$(find car_description)/launch/car_parameters.launch" />
 </launch>
+
+                                                                          
