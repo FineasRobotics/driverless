@@ -29,13 +29,13 @@ Turner_left_position_controller
     respawn="false" output="screen">
     <remap from="/joint_states" to="/car/joint_states" />
   </node>
+  <!--load the car parameters-->
+	<include file="$(find car_description)/launch/car_parameters.launch" />
 
   <!-- load the script controller-->
 	<node pkg="car_description" name="move" type="move.py"></node>
-	<!-- <node pkg="car_description" name="fixed_tf_broadcaster" type="fixed_tf_broadcaster.py"></node>-->
-	<node pkg="car_description" name="dynamic_tf_broadcaster" type="dynamic.py"></node>
-  <!--load the car parameters-->
-	<include file="$(find car_description)/launch/car_parameters.launch" />
+	<node pkg="car_description" name="tf_robot_odom_bridge" type="tf_robot_odom_bridge.py"></node>
+  
 </launch>
 
                                                                           
