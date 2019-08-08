@@ -1,33 +1,31 @@
 <?xml version="1.0"?>
 <launch>
-    <!-- base_local_planner/TrajectoryPlannerROS, dwa_local_planner/DWAPlannerROS, pose_follower/PoseFollower, teb_local_planner/TebLocalPlannerROS --> 
-    <arg name="local_planner" default="teb_local_planner/TebLocalPlannerROS" />
-    <!-- cone_global_planner/ConeGlobalPlanner, carrot_planner/CarrotPlanner, global_planner/GlobalPlanner, navfn/NavfnROS --> 
-    <arg name="global_planner" default="global_planner/GlobalPlanner" />
-    
-    <!-- SLAM: Gmapping -->
-    <node name="slam_gmapping" pkg="gmapping" type="slam_gmapping" args="-d $(find gmapping)">
-      <remap from="scan" to="/robot/laser/scan"/>
-    </node>
-    
-    <!-- MoveBase -->
-    <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
-      <param name="recovery_behavior_enabled" value="false"/>
-      <param name="footprint_padding" value="0.01" />
-      <param name="controller_frequency" value="5.0" />
-      <param name="controller_patience" value="3.0" />
-      <param name="oscillation_timeout" value="5.0" />
-      <param name="oscillation_distance" value="0.5" />
-      <param name="base_local_planner" value="$(arg local_planner)"/>
-      <param name="base_global_planner" value="$(arg global_planner)" />
-      <rosparam file="$(find estimation_common)/config/costmap_common_params.yaml" command="load" ns="global_costmap" />
-      <rosparam file="$(find estimation_common)/config/costmap_common_params.yaml" command="load" ns="local_costmap" />
-      <rosparam file="$(find estimation_common)/config/local_costmap_params.yaml" command="load" />
-      <rosparam file="$(find estimation_common)/config/global_costmap_params.yaml" command="load" />
-<!--      <rosparam file="$(find chapter6_tutorials)/config/base_local_planner_params.yaml" command="load" />-->
-      <rosparam file="$(find estimation_common)/config/teb_local_planner_params.yaml" command="load" 
-                if="$(eval local_planner == 'teb_local_planner/TebLocalPlannerROS')"/>
-    </node>
-    
+  <!-- base_local_planner/TrajectoryPlannerROS, dwa_local_planner/DWAPlannerROS, pose_follower/PoseFollower, teb_local_planner/TebLocalPlannerROS -->
+  <arg name="local_planner" default="teb_local_planner/TebLocalPlannerROS" />
+  <!-- cone_global_planner/ConeGlobalPlanner, carrot_planner/CarrotPlanner, global_planner/GlobalPlanner, navfn/NavfnROS -->
+  <arg name="global_planner" default="global_planner/GlobalPlanner" />
+
+  <!-- SLAM: Gmapping -->
+  <node name="slam_gmapping" pkg="gmapping" type="slam_gmapping" args="-d $(find gmapping)">
+    <remap from="scan" to="/robot/laser/scan"/>
+  </node>
+
+  <!-- MoveBase -->
+  <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
+    <param name="recovery_behavior_enabled" value="false"/>
+    <param name="footprint_padding" value="0.01" />
+    <param name="controller_frequency" value="5.0" />
+    <param name="controller_patience" value="3.0" />
+    <param name="oscillation_timeout" value="5.0" />
+    <param name="oscillation_distance" value="0.5" />
+    <param name="base_local_planner" value="$(arg local_planner)"/>
+    <param name="base_global_planner" value="$(arg global_planner)" />
+    <rosparam file="$(find estimation_common)/config/costmap_common_params.yaml" command="load" ns="global_costmap" />
+    <rosparam file="$(find estimation_common)/config/costmap_common_params.yaml" command="load" ns="local_costmap" />
+    <rosparam file="$(find estimation_common)/config/local_costmap_params.yaml" command="load" />
+    <rosparam file="$(find estimation_common)/config/global_costmap_params.yaml" command="load" />
+    <!--<rosparam file="$(find chapter6_tutorials)/config/base_local_planner_params.yaml" command="load" />-->
+    <rosparam file="$(find estimation_common)/config/teb_local_planner_params.yaml" command="load" if="$(eval local_planner == 'teb_local_planner/TebLocalPlannerROS')" />
+  </node>
 </launch>
 
