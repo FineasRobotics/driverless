@@ -2,7 +2,7 @@
 jCricket is Pinokio's Soul & Brain, the software running behind Fineas's 1st fully autonomous race car.
 
 ### Setup(For Ubuntu 16.04)
-1. Install packages `sudo apt-get install ros-kinetic-gazebo-ros-pkgs ros-kinetic-gazebo-ros-control ros-kinetic-navigation ros-kinetic-pose-follower ros-kinetic-teleop-twist-keyboard`
+1. Install packages `sudo apt-get install ros-kinetic-gazebo-ros-control ros-kinetic-ros-controllers ros-kinetic-navigation ros-kinetic-gmapping ros-kinetic-teb-local-planner`
 2. Create a new catkin workspace if you don't have one already.
 3. Clone this repository inside your workspace/src folder.
    To clone the files directly inside the src folder(without an extra folder), run inside the src folder:
@@ -26,16 +26,14 @@ Open another terminal and run: `rosrun teleop_twist_keyboard teleop_twist_keyboa
 ### Workspace Structure
     ├── 0_frt_common
     │   ├── robot
-    │   │   ├── meshes
-    │   │   └── urdf
     │   └── simulation
     │       ├── launch
     │       ├── rviz
     │       └── worlds
     ├── 1_perception
     ├── 2_estimation
+    │   ├── cone_global_planner
     │   └── estimation_common
-    │       ├── config
-    │       ├── launch
-    │       └── script
     └── 3_control
+        └── car_description
+
