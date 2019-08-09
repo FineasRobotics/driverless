@@ -406,7 +406,7 @@
 
   <!-- Hokuyo joint -->
   <joint name="hokuyo_joint" type="fixed">
-    <origin xyz="1.050 -0.2 0.5" rpy="0 0 0"/>
+    <origin xyz="1.07 -0.2 0.0" rpy="0 0 0"/>
     <parent link="base_link"/>
     <axis xyz="0 1 0" />
     <child link="hokuyo_link"/>
