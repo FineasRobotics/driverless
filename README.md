@@ -15,7 +15,7 @@ jCricket is Pinokio's Soul & Brain, the software running behind Fineas's 1st ful
 ### How to run
 1. Source the workspace.
 2. Run: `roslaunch simulation gazebo_simulation.launch`
-3. if the robot doesnt robot doesnt show up use rosrun car_description tf_robot_odom_bridge.py
+3. If the robot doesnt show up use `rosrun car_description tf_robot_odom_bridge.py`
 
 ### Send a goal using RViz
 Press 2D Nav Goal , hold it in the spot you want to send the goal, and turn it to the direction you want your robot to have when it reaches the goal.
