@@ -1,6 +1,6 @@
 TebLocalPlannerROS:
  odom_topic: odom
- map_frame: odom
+ map_frame: map
 
  # Trajectory
  teb_autosize: True
@@ -27,7 +27,7 @@ TebLocalPlannerROS:
 
  footprint_model: # types: "point", "circular", "two_circles", "line", "polygon"
    type: "polygon"
-   vertices: [[-0.2,-0.2], [-0.2,0.2], [0.2, 0.2], [0.2,-0.2]] #[[-0.1, -0.125], [-0.1, 0.125], [0.40, 0.125], [0.40, -0.125]]
+   vertices: [[1.8, -0.7], [1.8, 0.7], [-1.2, 0.7], [-1.2, -0.7]] #[[-0.1, -0.125], [-0.1, 0.125], [0.40, 0.125], [0.40, -0.125]]
 
  # GoalTolerance
  xy_goal_tolerance: 0.5
