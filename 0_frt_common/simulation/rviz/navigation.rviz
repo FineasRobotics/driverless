@@ -158,25 +158,19 @@ Visualization Manager:
           Value: true
         camera_link:
           Value: true
-        chassis:
-          Value: true
         hokuyo_link:
           Value: true
         map:
           Value: true
         odom:
           Value: true
-        turner_left:
+        wheel_1:
           Value: true
-        turner_right:
+        wheel_2:
           Value: true
-        wheel_bl:
+        wheel_3:
           Value: true
-        wheel_br:
-          Value: true
-        wheel_fl:
-          Value: true
-        wheel_fr:
+        wheel_4:
           Value: true
       Marker Scale: 1
       Name: TF
@@ -185,26 +179,21 @@ Visualization Manager:
       Show Names: false
       Tree:
         map:
-          base_footprint:
-            base_link:
-              camera_link:
-                {}
-              chassis:
-                {}
-              hokuyo_link:
-                {}
-              turner_left:
-                wheel_fl:
-                  {}
-              turner_right:
-                wheel_fr:
-                  {}
-              wheel_bl:
-                {}
-              wheel_br:
-                {}
           odom:
-            {}
+            base_footprint:
+              base_link:
+                camera_link:
+                  {}
+                hokuyo_link:
+                  {}
+                wheel_1:
+                  {}
+                wheel_2:
+                  {}
+                wheel_3:
+                  {}
+                wheel_4:
+                  {}
       Update Interval: 0
       Value: true
     - Alpha: 1
@@ -232,42 +221,27 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
           Value: true
-        chassis:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
         hokuyo_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        turner_left:
+        wheel_1:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        turner_right:
+        wheel_2:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        wheel_bl:
+        wheel_3:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        wheel_br:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        wheel_fl:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        wheel_fr:
+        wheel_4:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -327,7 +301,7 @@ Visualization Manager:
       Size (Pixels): 3
       Size (m): 0.00999999978
       Style: Flat Squares
-      Topic: /robot/laser/scan
+      Topic: scan
       Unreliable: false
       Use Fixed Frame: true
       Use rainbow: true
@@ -357,25 +331,25 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 7.21127987
+      Distance: 6.98907423
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.0599999987
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: 0.0925914124
-        Y: 17.9041805
-        Z: 3.24562359
+        X: 5.79783773
+        Y: -8.51835823
+        Z: 0.214891911
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.0500000007
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.00999999978
-      Pitch: 0.84479636
+      Pitch: 0.470685452
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 1.60359061
+      Yaw: 3.13817
     Saved: ~
 Window Geometry:
   Camera:

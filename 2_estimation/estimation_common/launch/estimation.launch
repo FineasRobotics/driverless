@@ -6,9 +6,7 @@
   <arg name="global_planner" default="global_planner/GlobalPlanner" />
 
   <!-- SLAM: Gmapping -->
-  <node name="slam_gmapping" pkg="gmapping" type="slam_gmapping" args="-d $(find gmapping)">
-    <remap from="scan" to="/robot/laser/scan"/>
-  </node>
+  <node name="slam_gmapping" pkg="gmapping" type="slam_gmapping" args="-d $(find gmapping)" />
 
   <!-- MoveBase -->
   <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
@@ -20,6 +18,7 @@
     <param name="oscillation_distance" value="0.5" />
     <param name="base_local_planner" value="$(arg local_planner)"/>
     <param name="base_global_planner" value="$(arg global_planner)" />
+    
     <rosparam file="$(find estimation_common)/config/costmap_common_params.yaml" command="load" ns="global_costmap" />
     <rosparam file="$(find estimation_common)/config/costmap_common_params.yaml" command="load" ns="local_costmap" />
     <rosparam file="$(find estimation_common)/config/local_costmap_params.yaml" command="load" />

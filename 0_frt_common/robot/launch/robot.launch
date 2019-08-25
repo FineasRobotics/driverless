@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="model" default="$(find robot)/urdf/robot.xacro" />
+
+	<param name="robot_description" command="$(find xacro)/xacro.py $(arg model)" />
+	<node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
+	<node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher" output="screen">
+	  <param name="publish_frequency" type="double" value="50.0" />
+	</node>
+	<node name="spawn_robot" pkg="gazebo_ros" type="spawn_model" args="-urdf -param robot_description -x 5.755832 -y -8.553579 -z 0.1 -Y -3.1 -model robot_model" respawn="false" output="screen" />
+
+</launch>
