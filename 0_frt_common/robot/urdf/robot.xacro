@@ -267,25 +267,34 @@
       <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6" />
     </inertial>
   </link>
-
-  <!-- Drive controller -->
-  <gazebo>
-    <plugin name="skid_steer_drive_controller" filename="libgazebo_ros_skid_steer_drive.so">
-      <updateRate>100.0</updateRate>
-      <robotNamespace>/</robotNamespace> 
-      <leftFrontJoint>base_to_wheel1</leftFrontJoint>
-      <rightFrontJoint>base_to_wheel3</rightFrontJoint>
-      <leftRearJoint>base_to_wheel2</leftRearJoint>
-      <rightRearJoint>base_to_wheel4</rightRearJoint>
-      <wheelSeparation>4</wheelSeparation>
-      <wheelDiameter>0.1</wheelDiameter>
-      <robotBaseFrame>base_footprint</robotBaseFrame>
-      <torque>3</torque>
-      <topicName>cmd_vel</topicName>
-      <broadcastTF>0</broadcastTF> <!-- se to 0 if you have your own odom -> base_link tf -->
-      <odometryTopic>controller/odom</odometryTopic>
-    </plugin>
-  </gazebo>
-
+  
+  <!-- imu joint & link -->
+  <joint name="imu_joint" type="fixed">
+    <axis xyz="0 0 1" />
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <parent link="base_link"/>
+    <child link="base_imu_link"/>
+  </joint>
+  
+  <link name="base_imu_link">
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.02 0.02 0.02"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.02 0.02 0.02"/>
+      </geometry>
+      <material name="red"/>
+    </visual>
+    <inertial>
+      <mass value="0.001" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="0.00000015" ixy="0" ixz="0" iyy="0.00000015" iyz="0" izz="0.00000015" />
+    </inertial>
+  </link>
 
 </robot>
