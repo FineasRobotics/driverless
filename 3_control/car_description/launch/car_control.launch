@@ -29,6 +29,7 @@
   <!-- load the script controller-->
   <node pkg="car_description" name="move" type="move.py"></node>
   <node pkg="car_description" name="tf_robot_odom_bridge" type="tf_robot_odom_bridge.py"></node>
+  <node pkg="car_description" name="odometry" type="odometry.py"></node>
 
 </launch>
 
