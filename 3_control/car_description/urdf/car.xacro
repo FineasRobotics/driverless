@@ -7,12 +7,12 @@
 	name="robot1_xacro">
 	
 	<!-- Car properties !!! Y is forward-->
-	<xacro:property name="base_mass" value="5" /> <!-- in kg-->
+	<xacro:property name="base_mass" value="20" /> <!-- in kg-->
 	<xacro:property name="base_x_size" value="2.130" /> 	<!-- x is mhkos forward -->
   	<xacro:property name="base_y_size" value="0.8935" /> 	<!-- y is platos -->
   	<xacro:property name="base_z_size" value="0.1" /><!-- z is ipsos -->
 	<!-- Wheels -->
-	<xacro:property name="wheel_mass" value="1" /> <!-- in kg-->
+	<xacro:property name="wheel_mass" value="2" /> <!-- in kg-->
 	<xacro:property name="length_wheel" value="0.190" />
 	<xacro:property name="radius_wheel" value="0.261" />
 	<!-- OFFSETS -->
@@ -294,15 +294,6 @@
    <origin rpy="0 0 0" xyz="0 0 0"/>
  </joint>
 
-<!-- ROS Control plugin for Gazebo -->
-  <gazebo>
-<static>false</static>
-    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
-      <robotNamespace>/car</robotNamespace>
-	<robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
-	<legacyModeNS>false</legacyModeNS>
-    </plugin>
-  </gazebo>
 
  <!-- transmission -->
   <transmission name="Turner_right_position_controller">
