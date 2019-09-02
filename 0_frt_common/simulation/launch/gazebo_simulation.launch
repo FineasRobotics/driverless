@@ -5,7 +5,7 @@
   <env name="GAZEBO_RESOURCE_PATH" value="$(find simulation)" />
   <!-- replace the name(e.g. skidpad) with takis/skidpad/small_track/acceleration-->
   <arg name="world_name" default="$(find simulation)/worlds/skidpad.world" />
-  <arg name="model" default="robot" /> <!-- pick robot or car -->
+  <arg name="model" default="car" /> <!-- pick robot or car -->
 
   <!-- Gazebo -->
   <include file="$(find gazebo_ros)/launch/empty_world.launch">

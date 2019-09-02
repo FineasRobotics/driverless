@@ -7,14 +7,14 @@ from gazebo_msgs.srv import GetModelState, GetModelStateRequest
 
 rospy.init_node('odom_pub')
 
-odom_pub=rospy.Publisher ('/my_odom', Odometry,queue_size=20)
+odom_pub=rospy.Publisher ('car/odom', Odometry,queue_size=20)
 
 rospy.wait_for_service ('/gazebo/get_model_state')
 get_model_srv = rospy.ServiceProxy('/gazebo/get_model_state', GetModelState)
 
 odom=Odometry()
 header = Header()
-header.frame_id='/odom'
+header.frame_id='odom'
 
 model = GetModelStateRequest()
 model.model_name='car'
@@ -22,14 +22,14 @@ model.model_name='car'
 r = rospy.Rate(2)
 
 while not rospy.is_shutdown():
-    result = get_model_srv(model)
+  result = get_model_srv(model)
 
-    odom.pose.pose = result.pose
-    odom.twist.twist = result.twist
+  odom.pose.pose = result.pose
+  odom.twist.twist = result.twist
 
-    header.stamp = rospy.Time.now()
-    odom.header = header
+  header.stamp = rospy.Time.now()
+  odom.header = header
 
-    odom_pub.publish (odom)
+  odom_pub.publish (odom)
 
-    r.sleep()
+  r.sleep()

@@ -158,19 +158,25 @@ Visualization Manager:
           Value: true
         camera_link:
           Value: true
+        chassis:
+          Value: true
         hokuyo_link:
           Value: true
         map:
           Value: true
         odom:
           Value: true
-        wheel_1:
+        turner_left:
           Value: true
-        wheel_2:
+        turner_right:
           Value: true
-        wheel_3:
+        wheel_bl:
           Value: true
-        wheel_4:
+        wheel_br:
+          Value: true
+        wheel_fl:
+          Value: true
+        wheel_fr:
           Value: true
       Marker Scale: 1
       Name: TF
@@ -184,15 +190,19 @@ Visualization Manager:
               base_link:
                 camera_link:
                   {}
+                chassis:
+                  {}
                 hokuyo_link:
                   {}
-                wheel_1:
+                turner_left:
+                  wheel_fl:
+                    {}
+                turner_right:
+                  wheel_fr:
+                    {}
+                wheel_bl:
                   {}
-                wheel_2:
-                  {}
-                wheel_3:
-                  {}
-                wheel_4:
+                wheel_br:
                   {}
       Update Interval: 0
       Value: true
@@ -221,27 +231,42 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
           Value: true
+        chassis:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
         hokuyo_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        wheel_1:
+        turner_left:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        wheel_2:
+        turner_right:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        wheel_3:
+        wheel_bl:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        wheel_4:
+        wheel_br:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        wheel_fl:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        wheel_fr:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -331,25 +356,25 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 6.98907423
+      Distance: 8.29414654
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.0599999987
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: 5.79783773
-        Y: -8.51835823
-        Z: 0.214891911
+        X: -1.46153748
+        Y: 17.7665806
+        Z: 0.927901983
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.0500000007
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.00999999978
-      Pitch: 0.470685452
+      Pitch: 0.362113476
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 3.13817
+      Yaw: 3.05117464
     Saved: ~
 Window Geometry:
   Camera:
