@@ -32,7 +32,7 @@
 	</macro>
 
 
-	<link name="base_footprint">
+	<link name="base_footprint">  <!-- used because KDL doesnt not support a root link with an inertia -->
    		<visual>
 			<geometry>
       				<box size="0.001 0.001 0.001"/>
