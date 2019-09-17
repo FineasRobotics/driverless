@@ -7,12 +7,13 @@
     <param name="freq" value="30.0"/>
     <param name="sensor_timeout" value="1.0"/>  
     <param name="odom_used" value="true"/>
-    <param name="imu_used" value="true"/>
+    <param name="imu_used" value="false"/>
     <param name="vo_used" value="false"/>
     <param name="debug" value="false"/>
     <remap from="odom" to="controller/odom"/>
   </node>
   
+<!--  <node name="gazebo_odometry" pkg="car_description" type="gazebo_odometry" ></node>-->
 <!--  <node pkg="laser_scan_matcher" type="laser_scan_matcher_node" name="laser_scan_matcher_node" output="screen">-->
 <!--    <param name="fixed_frame"    value = "odom"/>-->
 <!--    <param name="base_frame"     value = "base_link"/>-->

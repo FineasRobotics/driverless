@@ -113,9 +113,9 @@
       <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
         <alwaysOn>true</alwaysOn>
         <updateRate>0.0</updateRate>
-        <cameraName>camera1</cameraName>
+        <cameraName>robot/camera1</cameraName>
 <!--        <robotNamespace>/robot</robotNamespace>-->
-        <imageTopicName>robot/image_raw</imageTopicName>
+        <imageTopicName>image_raw</imageTopicName>
         <cameraInfoTopicName>camera_info</cameraInfoTopicName>
         <frameName>camera_link</frameName>
         <hackBaseline>0.07</hackBaseline>
@@ -153,7 +153,7 @@
   <gazebo>
     <plugin name="skid_steer_drive_controller" filename="libgazebo_ros_skid_steer_drive.so">
       <updateRate>100.0</updateRate>
-<!--      <robotNamespace>/robot</robotNamespace> -->
+      <robotNamespace>/robot</robotNamespace> 
       <leftFrontJoint>base_to_wheel1</leftFrontJoint>
       <rightFrontJoint>base_to_wheel3</rightFrontJoint>
       <leftRearJoint>base_to_wheel2</leftRearJoint>
@@ -163,9 +163,22 @@
       <robotBaseFrame>base_footprint</robotBaseFrame>
       <torque>3</torque>
       <topicName>cmd_vel</topicName>
-      <broadcastTF>0</broadcastTF> <!-- se to 0 if you have your own odom -> base_link tf -->
+      <broadcastTF>0</broadcastTF> 
       <odometryTopic>controller/odom</odometryTopic>
     </plugin>
   </gazebo>
+  
+<!--  <gazebo>-->
+<!--    <plugin name="p3d_base_controller" filename="libgazebo_ros_p3d.so">-->
+<!--      <alwaysOn>true</alwaysOn>-->
+<!--      <updateRate>50.0</updateRate>-->
+<!--      <bodyName>base_link</bodyName>-->
+<!--      <topicName>p3d/odom</topicName>-->
+<!--      <gaussianNoise>0.01</gaussianNoise>-->
+<!--      <frameName>map</frameName>-->
+<!--      <xyzOffsets>0 0 0</xyzOffsets>-->
+<!--      <rpyOffsets>0 0 0</rpyOffsets>-->
+<!--    </plugin>-->
+<!--  </gazebo>-->
 
 </robot>
