@@ -1,6 +1,6 @@
-#footprint: [[1.8, -0.7], [1.8, 0.7], [-1.2, 0.7], [-1.2, -0.7]]
+footprint: [[1.8, -0.7], [1.8, 0.7], [-1.2, 0.7], [-1.2, -0.7]]
 #footprint: [[2.130,-1.517], [2.130,1.517], [-2.130,  1.517], [-2.130 , -1.517]]
-footprint: [[-0.2,-0.2], [-0.2,0.2], [0.2,0.2], [0.2,-0.2]]
+#footprint: [[-0.2,-0.2], [-0.2,0.2], [0.2,0.2], [0.2,-0.2]]
 #[[-0.1, -0.125], [-0.1, 0.125], [0.40, 0.125], [0.40, -0.125]]
 
 transform_tolerance: 0.2
@@ -8,8 +8,8 @@ map_type: costmap
 
 obstacle_layer:
  enabled: true
- obstacle_range: 2.0
- raytrace_range: 2.5
+ obstacle_range: 20.0
+ raytrace_range: 20.5
  inflation_radius: 0.1
  track_unknown_space: falses
  combination_method: 1

@@ -9,7 +9,7 @@ TebLocalPlannerROS:
  global_plan_overwrite_orientation: True #true
  allow_init_with_backwards_motion: False #true
  max_global_plan_lookahead_dist: 3.0
- feasibility_check_no_poses: 2
+ feasibility_check_no_poses: 5
 
  # Robot
  max_vel_x: 0.25
@@ -21,15 +21,15 @@ TebLocalPlannerROS:
 
  # ********************** Carlike robot parameters ********************
  min_turning_radius: 1.8       # Min turning radius of the carlike robot (compute value using a model or adjust with rqt_reconfigure manually)
- wheelbase: 0.25                # Wheelbase of our robot
+ wheelbase: 1.0                # Wheelbase of our robot
  cmd_angle_instead_rotvel: False
  # ********************************************************************
 
  footprint_model: # types: "point", "circular", "two_circles", "line", "polygon"
    type: "polygon"
-   vertices: [[-0.2,-0.2], [-0.2,0.2], [0.2,0.2], [0.2,-0.2]]
-#[[1.8, -0.7], [1.8, 0.7], [-1.2, 0.7], [-1.2, -0.7]] 
-#[[-0.1, -0.125], [-0.1, 0.125], [0.40, 0.125], [0.40, -0.125]]
+   vertices: [[1.8, -0.7], [1.8, 0.7], [-1.2, 0.7], [-1.2, -0.7]] 
+   # [[-0.2,-0.2], [-0.2,0.2], [0.2,0.2], [0.2,-0.2]]
+   #[[-0.1, -0.125], [-0.1, 0.125], [0.40, 0.125], [0.40, -0.125]]
 
  # GoalTolerance
  xy_goal_tolerance: 0.5
