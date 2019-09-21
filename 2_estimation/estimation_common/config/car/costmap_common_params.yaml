@@ -1,0 +1,39 @@
+footprint: [[1.8, -0.7], [1.8, 0.7], [-1.2, 0.7], [-1.2, -0.7]]
+#footprint: [[2.130,-1.517], [2.130,1.517], [-2.130,  1.517], [-2.130 , -1.517]]
+#footprint: [[-0.2,-0.2], [-0.2,0.2], [0.2,0.2], [0.2,-0.2]]
+#[[-0.1, -0.125], [-0.1, 0.125], [0.40, 0.125], [0.40, -0.125]]
+
+transform_tolerance: 0.2
+map_type: costmap
+
+obstacle_layer:
+ enabled: true
+ obstacle_range: 20.0
+ raytrace_range: 20.5
+ inflation_radius: 0.1
+ track_unknown_space: falses
+ combination_method: 1
+
+ observation_sources: scan
+
+ scan: {
+  sensor_frame: base_link,  
+  observation_persistence: 0.0, 
+  max_obstacle_height: 0.4, 
+  min_obstacle_height: 0.0, 
+  data_type: LaserScan, 
+  topic: scan, 
+  marking: true, 
+  clearing: true
+ }
+
+
+inflation_layer:
+  enabled:              true
+  cost_scaling_factor:  10.0  
+  inflation_radius:     0.1 
+
+static_layer:
+  enabled:              true
+  map_topic:            "map"
+

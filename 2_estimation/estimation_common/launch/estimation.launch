@@ -4,7 +4,8 @@
   <arg name="local_planner" default="teb_local_planner/TebLocalPlannerROS" />
   <!-- cone_global_planner/ConeGlobalPlanner, carrot_planner/CarrotPlanner, global_planner/GlobalPlanner, navfn/NavfnROS -->
   <arg name="global_planner" default="global_planner/GlobalPlanner" />
-
+  <arg name="model" />
+  
   <!-- SLAM: Gmapping -->
   <node name="slam_gmapping" pkg="gmapping" type="slam_gmapping" args="-d $(find gmapping)" />
 
@@ -19,12 +20,12 @@
     <param name="base_local_planner" value="$(arg local_planner)"/>
     <param name="base_global_planner" value="$(arg global_planner)" />
     
-    <rosparam file="$(find estimation_common)/config/costmap_common_params.yaml" command="load" ns="global_costmap" />
-    <rosparam file="$(find estimation_common)/config/costmap_common_params.yaml" command="load" ns="local_costmap" />
-    <rosparam file="$(find estimation_common)/config/local_costmap_params.yaml" command="load" />
-    <rosparam file="$(find estimation_common)/config/global_costmap_params.yaml" command="load" />
+    <rosparam file="$(find estimation_common)/config/$(arg model)/costmap_common_params.yaml" command="load" ns="global_costmap" />
+    <rosparam file="$(find estimation_common)/config/$(arg model)/costmap_common_params.yaml" command="load" ns="local_costmap" />
+    <rosparam file="$(find estimation_common)/config/$(arg model)/local_costmap_params.yaml" command="load" />
+    <rosparam file="$(find estimation_common)/config/$(arg model)/global_costmap_params.yaml" command="load" />
     <!--<rosparam file="$(find chapter6_tutorials)/config/base_local_planner_params.yaml" command="load" />-->
-    <rosparam file="$(find estimation_common)/config/teb_local_planner_params.yaml" command="load" if="$(eval local_planner == 'teb_local_planner/TebLocalPlannerROS')" />
+    <rosparam file="$(find estimation_common)/config/$(arg model)/teb_local_planner_params.yaml" command="load" if="$(eval local_planner == 'teb_local_planner/TebLocalPlannerROS')" />
   </node>
 </launch>
 
