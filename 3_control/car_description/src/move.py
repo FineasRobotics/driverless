@@ -40,7 +40,10 @@ def callback(data):
     #Turning position
     y = data.angular.z * y_weight
     if y > 0.2 or y <-0.2: #check if the wheel position extends wheel position limit
-    	y=0.2
+    	if y > 0
+		y=0.2
+	if y < 0
+		y=-0.2
     if data.angular.z>0:
     	y1=y+0.05
 	y2=y
