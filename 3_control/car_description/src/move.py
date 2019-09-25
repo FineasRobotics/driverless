@@ -26,33 +26,33 @@ def callback(data):
     y_max = 0.25
     x_max = 3
     try:#check for weights and limits argotera na to kanw ana parametro to try
-	x_weight = rospy.get_param('linear_weight_speed')
-	x_max = rospy.get_param('linear_max_speed')
+        x_weight = rospy.get_param('linear_weight_speed')
+        x_max = rospy.get_param('linear_max_speed')
     except KeyError:
-	print "values not set weight and limits will use default values"
+        print "values not set weight and limits will use default values"
     rospy.loginfo(rospy.get_caller_id() + "I heard x: %s y: %s", data.linear.x,data.angular.z)
     #forward movement
     movementspeed.data = data.linear.x * x_weight
     if movementspeed.data > x_max: #check if the linear forward speed extends forward speed limit
-	movementspeed.data = x_max
+        movementspeed.data = x_max
     pubBR.publish(movementspeed)
     pubBL.publish(movementspeed)
     #Turning position
     y = data.angular.z * y_weight
     if y > 0.2 or y <-0.2: #check if the wheel position extends wheel position limit
-    	if y > 0
-		y=0.2
-	if y < 0
-		y=-0.2
+        if y > 0:
+            y=0.2
+        if y < 0:
+            y=-0.2
     if data.angular.z>0:
-    	y1=y+0.05
-	y2=y
+        y1=y+0.05
+        y2=y
     elif data.angular.z<0:
-	y1=y
-	y2=y+0.05
+        y1=y
+        y2=y+0.05
     else:
-	y1=0.00001
-	y2=0.00001
+        y1=0.00001
+        y2=0.00001
 
     angleRight.data = y2
     angleLeft.data = y1
