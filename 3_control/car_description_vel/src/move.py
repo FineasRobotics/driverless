@@ -39,11 +39,11 @@ def callback(data):
     pubBL.publish(movementspeed)
     #Turning position
     y = data.angular.z * y_weight
-    if y > 0.2 or y <-0.2: #check if the wheel position extends wheel position limit
+    if y > 0.3 or y <-0.3: #check if the wheel position extends wheel position limit
         if y > 0:
-            y=0.2
+            y=0.3
         if y < 0:
-            y=-0.2
+            y=-0.3
     if data.angular.z>0:
         y1=y+0.05
         y2=y
