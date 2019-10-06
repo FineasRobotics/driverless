@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<launch>
+  
+  <arg name="x" default="-15.0"/>
+  <arg name="y" default="14.4"/>
+  <arg name="z" default="0.1"/>
+  <arg name="roll" default="0.0"/>
+  <arg name="pitch" default="0.0"/>
+  <arg name="yaw" default="0.0"/>
+  
+  <param command="$(find xacro)/xacro '$(find eufs_description)/robots/ads-dv.urdf.xacro' --inorder" name="robot_description"/>
+
+  <node args="-urdf -model eufs -param robot_description 
+    -x $(arg x) -y $(arg y) -z $(arg z) -R $(arg roll) -P $(arg pitch) -Y $(arg yaw)" 
+    name="urdf_spawner" output="screen" pkg="gazebo_ros" respawn="false" type="spawn_model"/>
+  
+  <node name="robot_control" pkg="robot_control" type="robot_control_node" output="screen">
+    <remap from="joint_states" to="eufs/joint_states"/>
+    <param name="model" value="eufs"/>
+    <param name="publish_odom_tf" value="true"/>
+    <param name="wheelbase" value="1.55"/>
+    <param name="wheel_diameter" value="0.505"/>
+    <param name="max_speed" value="10.0"/>
+    <param name="max_steering" value="0.523599"/> <!-- 30 degs -->
+  </node>
+  
+  <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
+    output="screen" ns="/eufs" args="--shutdown-time 1 --namespace=/eufs
+            left_front_shock_controller
+            left_steering_joint_controller
+            left_front_axle_controller
+            right_front_shock_controller
+            right_steering_joint_controller
+            right_front_axle_controller
+            left_rear_shock_controller
+            left_rear_axle_controller
+            right_rear_shock_controller
+            right_rear_axle_controller
+            joint_read_state_controller
+                      "/>
+  <rosparam file="$(find robot_control)/config/eufs_control.yaml" command="load"/>
+
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen">
+    <remap from="/joint_states" to="/eufs/joint_states" />
+  </node>
+  
+  <!-- stereo_img_proc to process simulated stereo camera feed for depth and point cloud topics -->
+  <node pkg="stereo_image_proc" name="stereo_image_proc" type="stereo_image_proc" ns="zed" />
+  <!-- static tf node to transform the stero_image_proc into base_link frame -->
+  <node pkg="tf" name="point2_to_base_link_tf" type="static_transform_publisher" args="-0.12 0.06 0.9 -1.57079632679 0 -1.57079632679 base_link zed_frame 100.0" />
+  
+  <node name="ground_truth_republisher" pkg="robot_control" type="ground_truth_republisher.py" output="screen" />
+  
+</launch>

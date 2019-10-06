@@ -8,6 +8,8 @@
   
   <!-- SLAM: Gmapping -->
   <node name="slam_gmapping" pkg="gmapping" type="slam_gmapping" args="-d $(find gmapping)" />
+<!--    <param name="scan" value="/eufs/scan" />-->
+<!--  </node>-->
 
   <!-- MoveBase -->
   <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">

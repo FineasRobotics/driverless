@@ -2,33 +2,38 @@
 <launch>
   <param name="/use_sim_time" value="true" />
   <env name="GAZEBO_MODEL_PATH" value="$(find simulation)" />
-  <env name="GAZEBO_RESOURCE_PATH" value="$(find simulation)" />
+  <env name="GAZEBO_RESOURCE_PATH" value="$(find eufs_description)"/>
   <!-- replace the name(e.g. skidpad) with takis/skidpad/small_track/acceleration-->
   <arg name="world_name" default="$(find simulation)/worlds/skidpad.world" />
-  <arg name="model" default="car" /> <!-- pick robot or car -->
-
+  <arg name="model" default="car" /> <!-- pick robot/car/formula -->
+  
   <!-- Gazebo -->
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
     <arg name="world_name" value="$(arg world_name)"/>
     <arg name="paused" value="false"/>
     <arg name="use_sim_time" value="true"/>
-    <arg name="gui" value="false"/> <!-- set to true to open gazebo-->
+    <arg name="gui" value="true"/>
     <arg name="headless" value="false"/>
     <arg name="recording" value="false"/>
     <arg name="debug" value="false"/>
     <arg name="verbose" value="false" />
   </include>
-
+  
   <!-- RViz -->
   <node name="rviz" pkg="rviz" type="rviz" args="-d $(find simulation)/rviz/navigation.rviz" />
-
+  
   <!-- External launch files --> 
   <include file="$(find estimation_common)/launch/estimation.launch">
     <arg name="model" value="$(arg model)" />
   </include>
-  <include file="$(find perception_common)/launch/perception.launch" />
-  
-  <!-- Robot/car launch -->
+<!--  <include file="$(find perception_common)/launch/perception.launch" />-->
+
+  <!-- Robot/car/formula launch -->
   <include file="$(find robot)/launch/robot.launch" if="$(eval model == 'robot')"/>
-  <include file="$(find car_description)/launch/car_control.launch" if="$(eval model == 'car')"/>
+<!--  <include file="$(find car_description)/launch/car_control.launch" if="$(eval model == 'car')"/>-->
+  <group if="$(eval model == 'car')">
+    <include file="$(find robot_control)/launch/robot_control.launch" />
+    <node pkg="robot_control" name="twist_to_ackermannDrive" type="twist_to_ackermannDrive.py" args="twistToAckermannDrive:=eufsa_control/teleop_vel_out" />
+  </group>
+  
 </launch>
