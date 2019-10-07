@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <launch>
-  
+
   <arg name="x" default="-15.0"/>
   <arg name="y" default="14.4"/>
   <arg name="z" default="0.1"/>
@@ -50,5 +50,6 @@
   <node pkg="tf" name="point2_to_base_link_tf" type="static_transform_publisher" args="-0.12 0.06 0.9 -1.57079632679 0 -1.57079632679 base_link zed_frame 100.0" />
   
   <node name="ground_truth_republisher" pkg="robot_control" type="ground_truth_republisher.py" output="screen" />
+  <node pkg="robot_control" name="twist_to_ackermannDrive" type="twist_to_ackermannDrive.py" args="twistToAckermannDrive:=eufsa_control/teleop_vel_out" />
   
 </launch>
