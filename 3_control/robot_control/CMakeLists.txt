@@ -3,7 +3,6 @@ project(robot_control)
 
 
 find_package(catkin REQUIRED COMPONENTS
-  eufs_description
   ackermann_msgs
   geometry_msgs
   gazebo_ros
