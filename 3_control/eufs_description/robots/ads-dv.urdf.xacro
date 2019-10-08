@@ -62,78 +62,17 @@
   STEREO CAM: -0.110 0.0 0.800 -->
 
   <xacro:sensor_imu parent="base_link" prefix="imu">
-      <origin xyz="-0.0 0.0 0.0" rpy="0 0 0"/>
+    <origin xyz="-0.0 0.0 0.0" rpy="0 0 0"/>
   </xacro:sensor_imu>
 
 
   <xacro:sensor_gps  parent="base_link" prefix="gps">
-      <origin xyz="0.0 0.0 0.4" rpy="0 0 0"/>
+    <origin xyz="0.0 0.0 0.4" rpy="0 0 0"/>
   </xacro:sensor_gps>
 
-
-  <!-- Hokuyo joint -->
-  <joint name="hokuyo_joint" type="fixed">
-    <origin xyz="1.58 0.0 -0.1" rpy="0 0 0"/>
-    <parent link="base_link"/>
-    <axis xyz="0 1 0" />
-    <child link="hokuyo_link"/>
-  </joint>
-
-  <!-- Hokuyo Laser -->
-  <link name="hokuyo_link">
-<!--      <collision>-->
-<!--        <origin xyz="0 0 0" rpy="0 0 0"/>-->
-<!--        <geometry>-->
-<!--          <box size="0.01 -0.05 0.06"/>-->
-<!--        </geometry>-->
-<!--      </collision>-->
-
-    <visual>
-      <origin xyz="0 -0.05 0.06" rpy="0 0 0"/>
-      <geometry>
-        <mesh filename="package://robot/meshes/hokuyo.dae"/>
-      </geometry>
-    </visual>
-
-    <inertial>
-      <mass value="1e-5" />
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6" />
-    </inertial>
-  </link>
-  
-  <gazebo reference="hokuyo_link">
-    <sensor type="ray" name="head_hokuyo_sensor">
-      <pose>0 0 0 0 0 0</pose>
-      <visualize>false</visualize>
-      <update_rate>40</update_rate>
-      <ray>
-        <scan>
-          <horizontal>
-            <samples>720</samples>
-            <resolution>1</resolution>
-            <min_angle>-1.570796</min_angle>
-            <max_angle>1.570796</max_angle>
-          </horizontal>
-        </scan>
-        <range>
-          <min>0.10</min>
-          <max>30.0</max>
-          <resolution>0.01</resolution>
-        </range>
-        <noise>
-          <type>gaussian</type>
-          <mean>0.0</mean>
-          <stddev>0.01</stddev>
-        </noise>
-      </ray>
-      <plugin name="gazebo_ros_head_hokuyo_controller" filename="libgazebo_ros_laser.so">
-        <topicName>scan</topicName>
-        <frameName>hokuyo_link</frameName>
-<!--        <robotNamespace>/robot</robotNamespace>-->
-      </plugin>
-    </sensor>
-  </gazebo>
+  <xacro:sensor_hokuyo_utm30lx  parent="base_link" prefix="lidar" >
+    <origin xyz="1.700 0.0 -0.080" rpy="0 0 0"/>
+  </xacro:sensor_hokuyo_utm30lx>
 
   <!-- <xacro:VLP-16  parent="base_link" name="velodyne" topic="/velodyne_points" hz="10">
       <origin xyz="1.700 0.0 -0.150" rpy="0 -0.0174533 0"/>
@@ -144,7 +83,7 @@
 <!--    </xacro:VLP-16R>-->
 
   <xacro:zed_camera parent="base_link" prefix="zed">
-      <origin xyz="0.1 0.0 0.52" rpy="0 0 0"/> 
+    <origin xyz="0.1 0.0 0.52" rpy="0 0 0"/>
   </xacro:zed_camera>  
 
 

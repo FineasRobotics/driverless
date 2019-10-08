@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
 <launch>
 
-  <arg name="x" default="-15.0"/>
-  <arg name="y" default="14.4"/>
+  <arg name="x" default="0.0122"/>
+  <arg name="y" default="18.386"/>
   <arg name="z" default="0.1"/>
   <arg name="roll" default="0.0"/>
   <arg name="pitch" default="0.0"/>
-  <arg name="yaw" default="0.0"/>
+  <arg name="yaw" default="-1.5"/>
   
   <param command="$(find xacro)/xacro '$(find eufs_description)/robots/ads-dv.urdf.xacro' --inorder" name="robot_description"/>
 
@@ -20,7 +20,7 @@
     <param name="publish_odom_tf" value="true"/>
     <param name="wheelbase" value="1.55"/>
     <param name="wheel_diameter" value="0.505"/>
-    <param name="max_speed" value="10.0"/>
+    <param name="max_speed" value="15.0"/>
     <param name="max_steering" value="0.523599"/> <!-- 30 degs -->
   </node>
   
