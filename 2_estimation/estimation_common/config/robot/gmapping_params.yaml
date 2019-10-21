@@ -1,0 +1,9 @@
+gmapping:
+  map_udpate_interval: 2.0 #maximum usable range of the laser
+  maxUrange: 18.0 #maximum usable range of the laser
+  maxRange: 20.0
+  linearUpdate: 0.2 #Process a scan each time the robot translates this far
+  angularUpdate: 0.1 #Process a scan each time the robot rotates this far
+  temporalUpdate: 3.0
+  particles: 100
+  delta: 0.01 #resolution of map

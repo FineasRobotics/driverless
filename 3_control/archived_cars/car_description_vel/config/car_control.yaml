@@ -1,0 +1,40 @@
+car:
+  # Publish all joint states -----------------------------------
+  joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 50  
+
+  # Position Controllers ---------------------------------------
+  Turner_right_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: Turner_right_position_joint
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+
+  Turner_left_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: Turner_left_position_joint
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+
+  BackWheel_right_velocity_controller:
+    type: velocity_controllers/JointVelocityController
+    joint: BackWheel_right_joint
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+
+  BackWheel_left_velocity_controller:
+    type: velocity_controllers/JointVelocityController
+    joint: BackWheel_left_joint
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+
+
+
+  Front_left_wheel_controller:
+    type: effort_controllers/JointEffortController
+    joint: Front_left_wheel_joint
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+
+  Front_right_wheel_controller:
+    type: effort_controllers/JointEffortController
+    joint: Front_right_wheel_joint
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+
+

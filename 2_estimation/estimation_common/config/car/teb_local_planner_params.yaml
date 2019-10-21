@@ -4,30 +4,31 @@ TebLocalPlannerROS:
 
   # Trajectory
   teb_autosize: True
-  dt_ref: 0.2
-  dt_hysteresis: 0.02
-  global_plan_overwrite_orientation: True #true
+  dt_ref: 0.3
+  dt_hysteresis: 0.1
+  global_plan_overwrite_orientation: False #true
   allow_init_with_backwards_motion: False #true
-  max_global_plan_lookahead_dist: 3.0
+  max_global_plan_lookahead_dist: 5.0
   feasibility_check_no_poses: 5
 
   # Robot
-  max_vel_x: 0.25
+  max_vel_x: 0.5
   max_vel_x_backwards: 0.2
   max_vel_y: 0.0
-  max_vel_theta: 0.5 #** the angular velocity is also bounded by min_turning_radius in case of a carlike robot (r = v / omega)
+  max_vel_theta: 0.6 #** the angular velocity is also bounded by min_turning_radius in case of a carlike robot (r = v / omega)
   acc_lim_x: 4.0
-  acc_lim_theta: 2.0 #**
+  acc_lim_y: 1.0
+  acc_lim_theta: 2.0
 
   # ********************** Carlike robot parameters ********************
-  min_turning_radius: 1.8       # Min turning radius of the carlike robot (compute value using a model or adjust with rqt_reconfigure manually)
-  wheelbase: 1.0                # Wheelbase of our robot
+  min_turning_radius: 1.0       # Min turning radius of the carlike robot (compute value using a model or adjust with rqt_reconfigure manually)
+  wheelbase: 1.55                # Wheelbase of our robot
   cmd_angle_instead_rotvel: False
   # ********************************************************************
 
   footprint_model: # types: "point", "circular", "two_circles", "line", "polygon"
     type: "polygon"
-    vertices: [[1.8, -0.7], [1.8, 0.7], [-1.2, 0.7], [-1.2, -0.7]]
+    vertices: [[1.75, -0.8], [1.75, 0.8], [-1.25, 0.8], [-1.25, -0.8]]
 
   # GoalTolerance
   xy_goal_tolerance: 0.5
@@ -35,10 +36,10 @@ TebLocalPlannerROS:
   free_goal_vel: True
 
   # Obstacles
-  min_obstacle_dist: 0.1 
+  min_obstacle_dist: 0.5
   include_costmap_obstacles: True
-  costmap_obstacles_behind_robot_dist: 0.5
-  obstacle_poses_affected: 10
+  costmap_obstacles_behind_robot_dist: 1.0
+  obstacle_poses_affected: 30
   costmap_converter_plugin: ""
   costmap_converter_spin_thread: True
   costmap_converter_rate: 5
@@ -49,15 +50,15 @@ TebLocalPlannerROS:
   optimization_activate: True
   optimization_verbose: False
   penalty_epsilon: 0.1
-  weight_max_vel_x: 10
+  weight_max_vel_x: 1
   weight_max_vel_theta: 1
   weight_acc_lim_x: 1
   weight_acc_lim_theta: 1
   weight_kinematics_nh: 1000
-  weight_kinematics_forward_drive: 1000 #50
+  weight_kinematics_forward_drive: 100
   weight_kinematics_turning_radius: 1
-  weight_optimaltime: 50
-  weight_obstacle: 1
+  weight_optimaltime: 1
+  weight_obstacle: 50
   weight_dynamic_obstacle: 10 # not in use yet
 
   # Homotopy Class Planner
@@ -65,6 +66,8 @@ TebLocalPlannerROS:
   enable_multithreading: True
   simple_exploration: False
   max_number_classes: 4
+  selection_prefer_initial_plan: 0.95
+  selection_viapoint_cost_scale: 1.0
   selection_cost_hysteresis: 1.0
   selection_obst_cost_scale: 1.0
   selection_alternative_time_cost: False
