@@ -7,18 +7,13 @@
   <arg name="model" />
   
   <!-- SLAM: Gmapping -->
-  <node name="slam_gmapping" pkg="gmapping" type="slam_gmapping" args="-d $(find gmapping)" />
+  <node name="slam_gmapping" pkg="gmapping" type="slam_gmapping" args="-d $(find gmapping)" >
 <!--    <param name="scan" value="/eufs/scan" />-->
-<!--  </node>-->
+    <rosparam file="$(find estimation_common)/config/$(arg model)/gmapping_params.yaml" command="load" />
+  </node>
 
   <!-- MoveBase -->
   <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
-    <param name="recovery_behavior_enabled" value="false"/>
-    <param name="footprint_padding" value="0.01" />
-    <param name="controller_frequency" value="5.0" />
-    <param name="controller_patience" value="3.0" />
-    <param name="oscillation_timeout" value="5.0" />
-    <param name="oscillation_distance" value="0.5" />
     <param name="base_local_planner" value="$(arg local_planner)"/>
     <param name="base_global_planner" value="$(arg global_planner)" />
     
@@ -26,7 +21,7 @@
     <rosparam file="$(find estimation_common)/config/$(arg model)/costmap_common_params.yaml" command="load" ns="local_costmap" />
     <rosparam file="$(find estimation_common)/config/$(arg model)/local_costmap_params.yaml" command="load" />
     <rosparam file="$(find estimation_common)/config/$(arg model)/global_costmap_params.yaml" command="load" />
-    <!--<rosparam file="$(find chapter6_tutorials)/config/base_local_planner_params.yaml" command="load" />-->
+<!--    <rosparam file="$(find estimation_common)/config/$(arg model)/global_planner_params.yaml" command="load" />-->
     <rosparam file="$(find estimation_common)/config/$(arg model)/teb_local_planner_params.yaml" command="load" if="$(eval local_planner == 'teb_local_planner/TebLocalPlannerROS')" />
   </node>
 </launch>

@@ -1,6 +1,6 @@
 footprint: [[1.75, -0.8], [1.75, 0.8], [-1.25, 0.8], [-1.25, -0.8]]
-obstacle_range: 15.0
-raytrace_range: 16.0
+obstacle_range: 28.0
+raytrace_range: 29.0
 
 obstacle_layer:
   enabled: true
