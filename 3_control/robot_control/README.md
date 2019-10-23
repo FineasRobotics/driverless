@@ -15,6 +15,7 @@ This is the package that simulates the vehicle dynamics and odometry of the car 
 ## Launches
 * `robot_control.launch` - launches the `robot_control_node` fully parametarised for our 2017 car SISU 2.
 * `rqt_robot_control.launch` - launches a GUI to control the car WITH SLIDERS!!!
+* `movebase_seq.launch` - lanches a series of goals paramatarised on the launch file.
 
 ## Notes
 - DO NOT RUN THIS IN THE REAL WORLD

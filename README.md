@@ -16,7 +16,11 @@ jCricket is Pinokio's Soul & Brain, the software running behind Fineas's 1st ful
 2. Run: `roslaunch simulation gazebo_simulation.launch model:=car` or robot.
 
 ### Send a goal using RViz
-Press 2D Nav Goal , hold it in the spot you want to send the goal, and turn it to the direction you want your robot to have when it reaches the goal.
+Press 2D Nav Goal, hold it in the spot you want to send the goal, and turn it to the direction you want your robot to have when it reaches the goal.
+
+### Send a goal using move_base_sequence
+Launch `move_base_seq.py` using the `movebase_seq.launch file`. `Move_base_seq` is generating a goal sequence based on the paramatered goals defined in the `movebase_seq.launch` file. To incorporate a goal to the goal sequence add it's cartesian coordinates(x,y,z) into the `p_seq` rosparam seperated by a comma and it's yaw angle into the `yea_seq` param. For each yaw angle in `yea_seq` `move_base_seq` requires a set of coordinates in the `p_seq` so that `p_seq`[i], `yea_seq`[i].
+
 
 ### Control the robot using rqt
 Use argument manual_control during launch: `roslaunch simulation gazebo_simulation.launch model:=car manual_control:=true`.
@@ -37,7 +41,5 @@ Open another terminal and run: `rosrun teleop_twist_keyboard teleop_twist_keyboa
     │   ├── cone_global_planner
     │   └── estimation_common
     └── 3_control
-        ├── car_description
-        ├── car_description_vel
         ├── eufs_description
         └── robot_control
