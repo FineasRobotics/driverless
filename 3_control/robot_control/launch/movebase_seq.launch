@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<launch>
+    <!-- MoveBaseSeq node launch and Points Sequence ROS Parameters Loading -->
+    <!--Run move_base_seqs node-->
+    <node pkg="robot_control" type="move_base_seq.py" name="move_base_seq" output="screen">
+
+        <!-- Load Sequence of Points (Cartesian Coordinates wrt "map" RF, in meters) -->
+        <rosparam param="p_seq">[0,0,0,
+                                 9,-0.5,0,
+                                 20,-1.2,0,
+                                 23,-3,0,
+                                 26,-8,0,
+                                 25.7,-14,0,
+                                 22,-18.5,0,
+                                 16.2,-19.5,0,
+                                 10.5,-16,0,
+                                 8.5,-13,0,
+                                 9.3,-6.5,0,
+                                 12.5,-3.2,0,
+                                 17,-1.25,0]</rosparam>
+        <!-- Load Sequence of Desired Yaw Angles (no rotations around x and y axes) in degrees-->
+        <rosparam param="yea_seq">[0,358,355,310,290,255,190,175,130,95,70,60,358]</rosparam>
+
+    </node>
+
+</launch>
