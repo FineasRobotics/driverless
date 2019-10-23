@@ -7,6 +7,7 @@
   <arg name="world_name" default="$(find simulation)/worlds/skidpad.world" />
   <arg name="model" default="car" />
   <arg name="manual_control" default="false" />
+  <arg name="goal_seq" default="false" />
   
   <!-- Gazebo -->
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
@@ -32,5 +33,7 @@
   
   <!-- Manual driving using rqt -->
   <node pkg="rqt_robot_steering" name="rqt_robot_steering" type="rqt_robot_steering" if="$(arg manual_control)"/>
-
+  
+  <!-- Preprogrammed goal sequence -->
+  <include file="$(find robot_control)/launch/movebase_seq.launch" if="$(arg goal_seq)"/>
 </launch>

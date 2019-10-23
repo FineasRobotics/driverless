@@ -17,6 +17,8 @@
     <param name="base_local_planner" value="$(arg local_planner)"/>
     <param name="base_global_planner" value="$(arg global_planner)" />
     
+    <rosparam file="$(find estimation_common)/config/$(arg model)/move_base_params.yaml" command="load" />
+    
     <rosparam file="$(find estimation_common)/config/$(arg model)/costmap_common_params.yaml" command="load" ns="global_costmap" />
     <rosparam file="$(find estimation_common)/config/$(arg model)/costmap_common_params.yaml" command="load" ns="local_costmap" />
     <rosparam file="$(find estimation_common)/config/$(arg model)/local_costmap_params.yaml" command="load" />
