@@ -13,7 +13,7 @@ jCricket is Pinokio's Soul & Brain, the software running behind Fineas's 1st ful
 
 ### How to run
 1. Source the workspace(`source devel/setup.bash` or check our [ROS Basics](https://docs.google.com/document/d/1HTMq7Cwe4MZPlNUSJqRnfYy1TClEv3lscJfn8Ei_yrE/edit?usp=sharing) doc for more information).
-2. Run: `roslaunch simulation gazebo_simulation.launch`.
+2. Run: `roslaunch simulation gazebo_simulation.launch`.   
 Tip: you can make gazebo open its GUI by changing gui argument inside gazebo_simulation.launch file to true.
 
 ### Send a goal using RViz
