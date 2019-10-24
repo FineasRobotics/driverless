@@ -14,15 +14,7 @@ Odometry works in a similar way as in the real world ie. accounts for slip. Para
 
 * `twist_to_ackermannDrive.py` - converts `Twist` messages to `AckermannDrive` messages to allow the car to be controlled with generic controllers.
 
-* `move_base_seq.py` - generates a goal sequence based on the goals listed in the `movebase_seq.launch` file
-
-To add a goal to the goal sequence:
-  - add it's cartesian coordinates(x,y,z) into the `p_seq` rosparam seperated by a comma 
-  - add it's yaw angle into the `yea_seq` param.
-Those go in pairs, so always add/delete from both.
-
 ## Launch files
 * `robot_control.launch` - launches the `robot_control_node` for our 2017 car SISU 2.
 * `rqt_robot_control.launch` - launches a GUI to control the car, with sliders!
-* `movebase_seq.launch` - lanches a series of goals listed in the launch file.
 

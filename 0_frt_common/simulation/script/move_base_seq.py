@@ -61,7 +61,7 @@ class MoveBaseSeq():
             rospy.loginfo("Goal pose "+str(self.goal_cnt)+" received a cancel request after it started executing, completed execution!")
 
         if status == 3:
-            rospy.loginfo("Goal pose "+str(self.goal_cnt)+" reached") 
+            #rospy.loginfo("Goal pose "+str(self.goal_cnt)+" reached") 
             if self.goal_cnt< len(self.pose_seq):
                 next_goal = MoveBaseGoal()
                 next_goal.target_pose.header.frame_id = "map"
@@ -69,7 +69,7 @@ class MoveBaseSeq():
                 next_goal.target_pose.pose = self.pose_seq[self.goal_cnt]
                 rospy.loginfo("Sending goal pose "+str(self.goal_cnt+1)+" to Action Server")
                 rospy.loginfo(str(self.pose_seq[self.goal_cnt]))
-                self.client.send_goal(next_goal, self.done_cb, self.active_cb, self.feedback_cb) 
+                self.client.send_goal(next_goal, self.done_cb, self.active_cb) 
             else:
                 rospy.loginfo("Final goal pose reached!")
                 rospy.signal_shutdown("Final goal pose reached!")
@@ -95,7 +95,7 @@ class MoveBaseSeq():
         goal.target_pose.pose = self.pose_seq[self.goal_cnt]
         rospy.loginfo("Sending goal pose "+str(self.goal_cnt+1)+" to Action Server")
         rospy.loginfo(str(self.pose_seq[self.goal_cnt]))
-        self.client.send_goal(goal, self.done_cb, self.active_cb, self.feedback_cb)
+        self.client.send_goal(goal, self.done_cb, self.active_cb)
         rospy.spin()
 
 if __name__ == '__main__':

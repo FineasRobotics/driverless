@@ -35,5 +35,5 @@
   <node pkg="rqt_robot_steering" name="rqt_robot_steering" type="rqt_robot_steering" if="$(arg manual_control)"/>
   
   <!-- Preprogrammed goal sequence -->
-  <include file="$(find robot_control)/launch/movebase_seq.launch" if="$(arg goal_seq)"/>
+  <include file="$(find simulation)/launch/movebase_seq.launch" if="$(arg goal_seq)"/>
 </launch>
