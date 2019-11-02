@@ -1,6 +1,3 @@
-
-jCricket is Pinokio's Soul & Brain, the software running behind Fineas's 1st fully autonomous race car.
-
 ### Setup(Ubuntu 16.04, ROS Kinetic)
 1. Install packages `sudo apt-get install ros-kinetic-gazebo-ros-control ros-kinetic-ros-controllers ros-kinetic-navigation ros-kinetic-gmapping ros-kinetic-teb-local-planner ros-kinetic-robot-localization ros-kinetic-robot-pose-ekf ros-kinetic-ackermann-msgs ros-kinetic-twist-mux ros-kinetic-controller-manager ros-kinetic-robotnik-msgs ros-kinetic-velodyne-simulator`
 2. Create a new catkin workspace if you don't have one already.
@@ -43,3 +40,18 @@ Open another terminal and run: `rosrun teleop_twist_keyboard teleop_twist_keyboa
     └── 3_control
         ├── eufs_description
         └── robot_control
+
+
+### General Information
+|   | What we use |
+| --- | --- |
+| Odometry | [p3d ground truth gazebo plugin](http://answers.gazebosim.org/question/5308/getting-the-gazebo-plugin-p3d-working-hydro/) |
+|   | [robot_localization](http://wiki.ros.org/robot_localization) |
+| Global planner | [global_planner](http://wiki.ros.org/global_planner) |
+| Local Planner | [teb_local_planner](http://wiki.ros.org/teb_local_planner) |
+| SLAM | [gmapping](http://wiki.ros.org/gmapping) |
+| Model/worlds/controller | [eufs_sims](https://github.com/eufsa/eufs_sim) |
+
+### Resources
+To learn the basics about navigation stack(global/local planners, global/local costmaps, slam, etc) read our [notes](https://docs.google.com/document/d/16-5KOVbNeFnTPGc-kzu8Ekxp12gSc4EVdfgeUYXNKyg/edit?usp=sharing).  
+To learn more about odometry and robot localization read [this](https://docs.google.com/document/d/1BYfTE1UvOFvjqe9twNMvkgo7YhZLXmMKIsxzH5Jt48M/edit?usp=sharing).  
