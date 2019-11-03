@@ -9,6 +9,8 @@
 | SLAM | [gmapping](http://wiki.ros.org/gmapping) |
 | Model/worlds/controller | [eufs_sims](https://github.com/eufsa/eufs_sim) |
 
+----
+
 ### Setup(Ubuntu 16.04, ROS Kinetic)
 
 1. Install packages `sudo apt-get install ros-kinetic-gazebo-ros-control ros-kinetic-ros-controllers ros-kinetic-navigation ros-kinetic-gmapping ros-kinetic-teb-local-planner ros-kinetic-robot-localization ros-kinetic-robot-pose-ekf ros-kinetic-ackermann-msgs ros-kinetic-twist-mux ros-kinetic-controller-manager ros-kinetic-robotnik-msgs ros-kinetic-velodyne-simulator`
@@ -20,11 +22,15 @@
     - `git pull origin master`
 4. Run `catkin_make`.
 
+----
+
 ### How to run
 
 1. Source the workspace(`source devel/setup.bash` or check our [ROS Basics](https://docs.google.com/document/d/1HTMq7Cwe4MZPlNUSJqRnfYy1TClEv3lscJfn8Ei_yrE/edit?usp=sharing) doc for more information).
 2. Run: `roslaunch simulation gazebo_simulation.launch`.   
 Tip: you can make gazebo open its GUI by changing gui argument inside gazebo_simulation.launch file to true.
+
+----
 
 ### How to send a goal
 
@@ -37,6 +43,8 @@ Press 2D Nav Goal, hold it in the spot you want to send the goal, and turn it to
 Use argument goal_seq when launching: `roslaunch simulation gazebo_simulation.launch goal_seq:=true`.   
 For more information on how it works and how to modify the goal sequence check [control readme](3_control/robot_control/README.md).
 
+----
+
 ### How to control the robot
 
 #### Control the robot using rqt
@@ -47,10 +55,14 @@ Use argument manual_control when launching: `roslaunch simulation gazebo_simulat
 
 Open another terminal and run: `rosrun teleop_twist_keyboard teleop_twist_keyboard.py`
 
+----
+
 ### Resources
 
 To learn the basics about navigation stack(global/local planners, global/local costmaps, slam, etc) read our [notes](https://docs.google.com/document/d/16-5KOVbNeFnTPGc-kzu8Ekxp12gSc4EVdfgeUYXNKyg/edit?usp=sharing).  
 To learn more about odometry and robot localization read [this](https://docs.google.com/document/d/1BYfTE1UvOFvjqe9twNMvkgo7YhZLXmMKIsxzH5Jt48M/edit?usp=sharing).  
+
+----
 
 ### Workspace Structure
 
