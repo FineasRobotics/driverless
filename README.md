@@ -1,9 +1,23 @@
+## Table of Contents
+- [General Information](#general-information)
+- [Setup](#setup)
+- [How to run](#how-to-run)
+- [How to send a goal](#how-to-send-a-goal)
+    - [Send a goal using RViz](#send-a-goal-using-rviz)
+    - [Send a goal using move_base_sequence](#send-a-goal-using-move_base_sequence)
+- [How to control the robot](#how-to-control-the-robot)
+    - [Control the robot using rqt](#control-the-robot-using-rqt)
+    - [Control the robot with the keyboard](#control-the-robot-with-the-keyboard)
+- [Resources](#resources)
+- [Workspace Structure](#workspace-structure)
+
 ### General Information
 
 |   | What we use |
 | --- | --- |
 | Odometry | [p3d ground truth gazebo plugin](http://answers.gazebosim.org/question/5308/getting-the-gazebo-plugin-p3d-working-hydro/) |
 |   | [robot_localization](http://wiki.ros.org/robot_localization) |
+|   | [robot_pose_ekf](http://wiki.ros.org/robot_pose_ekf) |
 | Global planner | [global_planner](http://wiki.ros.org/global_planner) |
 | Local Planner | [teb_local_planner](http://wiki.ros.org/teb_local_planner) |
 | SLAM | [gmapping](http://wiki.ros.org/gmapping) |
@@ -11,16 +25,17 @@
 
 ----
 
-### Setup(Ubuntu 16.04, ROS Kinetic)
+### Setup
 
-1. Install packages `sudo apt-get install ros-kinetic-gazebo-ros-control ros-kinetic-ros-controllers ros-kinetic-navigation ros-kinetic-gmapping ros-kinetic-teb-local-planner ros-kinetic-robot-localization ros-kinetic-robot-pose-ekf ros-kinetic-ackermann-msgs ros-kinetic-twist-mux ros-kinetic-controller-manager ros-kinetic-robotnik-msgs ros-kinetic-velodyne-simulator`
-2. Create a new catkin workspace if you don't have one already.
-3. To clone the files directly (without an extra folder), run inside the src folder:
+1. You need [Ubuntu 16.04](http://releases.ubuntu.com/16.04/) with [ROS Kinetic](http://wiki.ros.org/kinetic/Installation/Ubuntu) installed.
+2. Install packages `sudo apt-get install ros-kinetic-gazebo-ros-control ros-kinetic-ros-controllers ros-kinetic-navigation ros-kinetic-gmapping ros-kinetic-teb-local-planner ros-kinetic-robot-localization ros-kinetic-robot-pose-ekf ros-kinetic-ackermann-msgs ros-kinetic-twist-mux ros-kinetic-controller-manager ros-kinetic-robotnik-msgs ros-kinetic-velodyne-simulator`
+3. Create a new catkin workspace if you don't have one already.
+4. To clone the files directly (without an extra folder), run inside the src folder:
     - `git init`
     - `git remote add origin https://gitlab.com/fineasracingteam/jcricket.git`
     - `git fetch --all`
     - `git pull origin master`
-4. Run `catkin_make`.
+5. Run `catkin_make`.
 
 ----
 
