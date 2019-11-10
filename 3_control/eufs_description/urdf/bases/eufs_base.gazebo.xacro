@@ -23,7 +23,7 @@
 <!--        <topicName>ground_truth/state_raw</topicName>-->
 <!--        <gaussianNoise>0.00</gaussianNoise>-->
 <!--        <frameName>world</frameName>-->
-<!--        <!-- origin is at spawn location -->-->
+<!--         origin is at spawn location -->
 <!--        <xyzOffset>43.0 -40 0</xyzOffset>-->
 <!--        <rpyOffset>0 0 0</rpyOffset>-->
 <!--    </plugin>-->
