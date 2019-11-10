@@ -65,10 +65,9 @@
     <origin xyz="-0.0 0.0 0.0" rpy="0 0 0"/>
   </xacro:sensor_imu>
 
-
-  <xacro:sensor_gps  parent="base_link" prefix="gps">
-    <origin xyz="0.0 0.0 0.4" rpy="0 0 0"/>
-  </xacro:sensor_gps>
+<!--  <xacro:sensor_gps  parent="base_link" prefix="gps">-->
+<!--    <origin xyz="0.0 0.0 0.4" rpy="0 0 0"/>-->
+<!--  </xacro:sensor_gps>-->
 
   <xacro:sensor_hokuyo_utm30lx  parent="base_link" prefix="lidar" >
     <origin xyz="1.700 0.0 -0.080" rpy="0 0 0"/>
