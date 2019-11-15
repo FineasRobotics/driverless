@@ -15,7 +15,8 @@
 
 |   | What we use |
 | --- | --- |
-| Odometry | [p3d ground truth gazebo plugin](http://answers.gazebosim.org/question/5308/getting-the-gazebo-plugin-p3d-working-hydro/) |
+| Odometry | [eufs_sims](https://github.com/eufsa/eufs_sim) > robot_control |
+| Other tools | [p3d ground truth gazebo plugin](http://answers.gazebosim.org/question/5308/getting-the-gazebo-plugin-p3d-working-hydro/) |
 |   | [robot_localization](http://wiki.ros.org/robot_localization) |
 |   | [robot_pose_ekf](http://wiki.ros.org/robot_pose_ekf) |
 | Global planner | [global_planner](http://wiki.ros.org/global_planner) |
