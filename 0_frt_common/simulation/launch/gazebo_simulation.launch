@@ -8,6 +8,8 @@
   <arg name="model" default="car" />
   <arg name="manual_control" default="false" />
   <arg name="goal_seq" default="false" />
+  <arg name="myodom" default="true" /> <!-- set to true to run perception.launch with your odom -->
+  <arg name="robot_control" default="$(eval not(myodom))" />
   
   <!-- Gazebo -->
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
@@ -29,7 +31,11 @@
     <arg name="model" value="$(arg model)" />
   </include>
   
-  <include file="$(find robot_control)/launch/robot_control.launch" />
+  <include file="$(find robot_control)/launch/robot_control.launch">
+    <arg name="robot_control" value="$(arg robot_control)" />
+  </include>
+  
+  <include file="$(find perception_common)/launch/perception.launch" if="$(arg myodom)"/>
   
   <!-- Manual driving using rqt -->
   <node pkg="rqt_robot_steering" name="rqt_robot_steering" type="rqt_robot_steering" if="$(arg manual_control)"/>

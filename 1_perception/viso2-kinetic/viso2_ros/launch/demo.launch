@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+
+<launch>
+
+  <arg name="camera" default="/zed"/>
+
+  <!-- Run the stereo image proc -->
+  <node ns="$(arg camera)" pkg="image_proc" type="image_proc" name="image_proc" />
+
+  <!-- Viso2 -->
+  <node pkg="viso2_ros" type="stereo_odometer" name="stereo_odometer" output="screen">
+    <remap from="image" to="image_rect"/>
+    <remap from="stereo" to="$(arg camera)"/>
+    <param name="base_link_frame_id" value="base_footprint"/>
+  </node>
+
+</launch>
