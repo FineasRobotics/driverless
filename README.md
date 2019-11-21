@@ -17,7 +17,7 @@
 | --- | --- |
 | Odometry | [eufs_sims](https://github.com/eufsa/eufs_sim) > robot_control |
 | Other tools | [p3d ground truth gazebo plugin](http://answers.gazebosim.org/question/5308/getting-the-gazebo-plugin-p3d-working-hydro/) |
-|   | [robot_localization](http://wiki.ros.org/robot_localization) |
+|   | [robot_localization](http://wiki.ros.org/robot_localization) - check [this](https://github.com/methylDragon/ros-sensor-fusion-tutorial)|
 |   | [robot_pose_ekf](http://wiki.ros.org/robot_pose_ekf) |
 | Global planner | [global_planner](http://wiki.ros.org/global_planner) |
 | Local Planner | [teb_local_planner](http://wiki.ros.org/teb_local_planner) |
@@ -57,7 +57,7 @@ Press 2D Nav Goal, hold it in the spot you want to send the goal, and turn it to
 #### Send a goal using move_base_sequence
 
 Use argument goal_seq when launching: `roslaunch simulation gazebo_simulation.launch goal_seq:=true`.   
-For more information on how it works and how to modify the goal sequence check [control readme](3_control/robot_control/README.md).
+For more information on how it works and how to modify the goal sequence check [simulation readme](0_frt_common/simulation/README.md).
 
 ----
 
@@ -69,14 +69,7 @@ Use argument manual_control when launching: `roslaunch simulation gazebo_simulat
 
 #### Control the robot with the keyboard
 
-Open another terminal and run: `rosrun teleop_twist_keyboard teleop_twist_keyboard.py`
-
-----
-
-### Resources
-
-To learn the basics about navigation stack(global/local planners, global/local costmaps, slam, etc) read our [notes](https://docs.google.com/document/d/16-5KOVbNeFnTPGc-kzu8Ekxp12gSc4EVdfgeUYXNKyg/edit?usp=sharing).  
-To learn more about odometry and robot localization read [this](https://docs.google.com/document/d/1BYfTE1UvOFvjqe9twNMvkgo7YhZLXmMKIsxzH5Jt48M/edit?usp=sharing).  
+Open another terminal and run: `rosrun teleop_twist_keyboard teleop_twist_keyboard.py` 
 
 ----
 
