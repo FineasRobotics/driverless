@@ -6,6 +6,10 @@ yolo_model:
     name: yolov3.weights
   threshold:
     value: 0.3
+  image_view:
+    enable_opencv: true
+    use_darknet: true
+    wait_key_delay: 1
   detection_classes:
     names:
       - person
